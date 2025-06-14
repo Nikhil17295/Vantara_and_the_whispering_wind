@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://r5rb2trcptbv"]
+[gd_scene load_steps=5 format=3 uid="uid://r5rb2trcptbv"]
 
 [ext_resource type="PackedScene" uid="uid://8w6i4j803aph" path="res://scenes/main_char.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://dcyw6oraf7ydt" path="res://assets/beast island/ChatGPT Image Jun 13, 2025, 03_51_40 PM.png" id="2_yqjtg"]
@@ -217,17 +217,14 @@ format = 2
 
 [node name="Background" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD9//7/AgAGAAIAAAABAP//AgAFAAEAAAACAP//AgAFAAEAAAAEAP//AgAHAAUAAAAFAP//AgAFAAAAAAD7////AgAGAAAAAAD8////AgAHAAAAAAD9//3/AgAGAAEAAAD9////AgAGAAMAAAD+//3/AgAHAAEAAAD+//7/AgAHAAIAAAD+////AgAHAAMAAAADAP7/AgAGAAQAAAADAP//AgAGAAUAAAAEAP7/AgAHAAQAAAA=")
 tile_set = SubResource("TileSet_lbhrr")
 navigation_enabled = false
 
 [node name="main" type="TileMapLayer" parent="TileMap"]
 modulate = Color(0, 0, 0, 1)
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD7/wAAAgAAAAAAAAD8/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD+/wAAAgAAAAAAAAD//wAAAgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAADAAAAAgAAAAAAAAACAAAAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAAAAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAADAAEAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAD7/wEAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Outer" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAAAAgACAAAAAAABAAAAAgACAAAAAAACAAAAAgACAAAAAAADAAAAAgACAAAAAAD//wAAAgACAAAAAAD+/wAAAgACAAAAAAD9/wAAAgACAAAAAAD8/wAAAgACAAAAAAD7/wAAAgACAAAAAAD7/wEAAgACAAIAAAD8/wEAAgACAAIAAAD9/wEAAgACAAIAAAD+/wEAAgACAAIAAAD//wEAAgACAAIAAAAAAAEAAgACAAIAAAABAAEAAgACAAIAAAACAAEAAgACAAIAAAADAAEAAgACAAIAAAAEAAAAAgACAAAAAAAFAAAAAgACAAAAAAAEAAEAAgACAAIAAAAFAAEAAgACAAIAAAA=")
 tile_set = SubResource("TileSet_lbhrr")
