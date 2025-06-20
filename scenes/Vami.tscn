@@ -75,16 +75,6 @@ frame_progress = 0.878991
 position = Vector2(-3.5, 12)
 shape = SubResource("RectangleShape2D_1171m")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="CameraTarget" type="Marker2D" parent="."]
 
-[node name="Rayleft" type="RayCast2D" parent="Node2D"]
-position = Vector2(-12, 30)
-target_position = Vector2(0, 6)
-
-[node name="Raycenter" type="RayCast2D" parent="Node2D"]
-position = Vector2(-3, 30)
-target_position = Vector2(0, 6)
-
-[node name="Rayright" type="RayCast2D" parent="Node2D"]
-position = Vector2(6, 30)
-target_position = Vector2(0, 6)
+[node name="Camera2D" type="Camera2D" parent="CameraTarget"]

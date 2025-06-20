@@ -179,11 +179,6 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 [node name="Vami" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(1, -35)
 
-[node name="Camera2D" type="Camera2D" parent="Vami"]
-position = Vector2(-6, 13)
-zoom = Vector2(3, 3)
-position_smoothing_speed = 30.0
-
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(0.989713, 1)
 tile_set = SubResource("TileSet_lbhrr")
