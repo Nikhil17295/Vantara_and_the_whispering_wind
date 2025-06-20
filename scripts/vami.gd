@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 # Movement speeds
 const SPEED = 280.0
-const MAX_FALL_SPEED = 900.0
+const MAX_FALL_SPEED = 800.0
 
 # Jump forces
 const JUMP_VELOCITY = -470.0
@@ -15,10 +15,10 @@ const COYOTE_TIME = 0.1
 const JUMP_BUFFER_TIME = 0.1
 
 # Acceleration
-const ACCELERATION = 2300.0
-const FRICTION = 1800.0
-const AIR_ACCELERATION = 1400.0
-const AIR_FRICTION = 800.0
+const ACCELERATION = 2100.0
+const FRICTION = 1700.0
+const AIR_ACCELERATION = 1200.0
+const AIR_FRICTION = 700.0
 
 # Apex hang
 const APEX_HANG_VELOCITY = 30.0
