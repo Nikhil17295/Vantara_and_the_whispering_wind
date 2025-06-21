@@ -11,11 +11,11 @@ const FALL_GRAVITY_MULTIPLIER = 1.5
 const SHORT_JUMP_MULTIPLIER = 2.3
 
 # Timings
-const COYOTE_TIME = 0.08
-const JUMP_BUFFER_TIME = 0.08
+const COYOTE_TIME = 0.1
+const JUMP_BUFFER_TIME = 0.1
 
 # Acceleration
-const ACCELERATION = 2100.0
+const ACCELERATION = 1500.0
 const FRICTION = 1800.0
 const AIR_ACCELERATION = 1400.0
 const AIR_FRICTION = 700.0
@@ -25,7 +25,6 @@ const APEX_HANG_VELOCITY = 30.0
 const APEX_GRAVITY_MULTIPLIER = 0.5
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var camera_target: Marker2D = $CameraTarget
 
 # State variables
 var jump_buffer = 0.0
@@ -34,11 +33,7 @@ var direction: float = 0.0
 
 func _ready():
 	animated_sprite.play("idle")
-
-func _process(delta: float) -> void:
-	var target_position = global_position
-	camera_target.global_position = camera_target.global_position.lerp(target_position, delta * 15.0)
-	camera_target.global_position = camera_target.global_position.snapped(Vector2(1, 1)) # snap to pixel grid
+	get_viewport().size = DisplayServer.screen_get_size()
 
 
 func _physics_process(delta: float) -> void:
