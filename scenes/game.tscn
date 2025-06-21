@@ -177,7 +177,7 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 [node name="Game" type="Node2D"]
 
 [node name="Vami" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(1, -35)
+position = Vector2(2, -35)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(0.989713, 1)

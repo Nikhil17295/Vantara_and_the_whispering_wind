@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 # Movement speeds
 const SPEED = 270.0
-const MAX_FALL_SPEED = 800.0
+const MAX_FALL_SPEED = 750.0
 
 # Jump forces
 const JUMP_VELOCITY = -470.0
@@ -35,9 +35,45 @@ func _ready():
 	animated_sprite.play("idle")
 	get_viewport().size = DisplayServer.screen_get_size()
 
+@onready var camera = $Camera2D
+var cam_offset := Vector2.ZERO
+var facing_direction := 1
+const LOOKAHEAD_ZONE := 50
+var vertical_target = -10
+
+func _process(delta):
+	if direction != 0:
+		facing_direction = direction
+
+	# Only activate lookahead if player is near center
+	var player_offset = global_position.x - camera.global_position.x
+
+	if abs(player_offset) <= LOOKAHEAD_ZONE:
+		cam_offset.x = (LOOKAHEAD_ZONE * facing_direction) + player_offset
+	else:
+		cam_offset.x = 0  # Freeze when off-center
+
+	# Vertical look target
+	if velocity.y >= MAX_FALL_SPEED:
+		vertical_target = 110.0
+	elif Input.is_action_pressed("look_up"):
+		vertical_target = -80.0
+	elif Input.is_action_pressed("look_down"):
+		vertical_target = 90.0
+	else:
+		vertical_target = -10.0
+
+	# Apply vertical smoothing to cam_offset.y, not directly to camera
+	cam_offset.y = move_toward(cam_offset.y, vertical_target, delta * 250.0)
+
+	# Apply full smoothed offset to camera
+	camera.offset = camera.offset.move_toward(cam_offset, delta * 180.0)
+
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("move_left", "move_right")
+	if direction != 0:
+		facing_direction = direction
 	var grounded: bool = is_on_floor()
 
 	handle_horizontal_movement(delta, grounded)

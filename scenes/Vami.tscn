@@ -53,8 +53,9 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1171m"]
-size = Vector2(20, 46)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1171m"]
+radius = 12.0
+height = 52.0
 
 [sub_resource type="GDScript" id="GDScript_1171m"]
 script/source = "extends Camera2D
@@ -78,7 +79,6 @@ func _process(delta):
 position = Vector2(3, -35)
 floor_snap_length = 0.0
 script = ExtResource("1_1171m")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -90,16 +90,17 @@ autoplay = "idle"
 frame_progress = 0.878991
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.5, 12)
-shape = SubResource("RectangleShape2D_1171m")
+position = Vector2(-5, 9)
+shape = SubResource("CapsuleShape2D_1171m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(4, -38)
 position_smoothing_speed = 8.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.25
-drag_top_margin = 0.3
-drag_right_margin = 0.25
-drag_bottom_margin = 0.3
+drag_left_margin = 0.12
+drag_top_margin = 0.0
+drag_right_margin = 0.07
+drag_bottom_margin = 0.5
 editor_draw_drag_margin = true
 script = SubResource("GDScript_1171m")
