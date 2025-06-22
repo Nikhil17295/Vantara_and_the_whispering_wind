@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 # Movement speeds
 const SPEED = 280.0
-const MAX_FALL_SPEED = 750.0
-const AIR_BOOST_SPEED = 200.0
+const MAX_FALL_SPEED = 900.0
+const AIR_BOOST_SPEED = 150.0
 
 # Jump forces
 const JUMP_VELOCITY = -470.0
@@ -12,7 +12,7 @@ const FALL_GRAVITY_MULTIPLIER = 1.5
 const SHORT_JUMP_MULTIPLIER = 2.3
 
 # Timings
-const COYOTE_TIME = 0.1
+const COYOTE_TIME = 0.07
 const JUMP_BUFFER_TIME = 0.1
 
 # Acceleration
