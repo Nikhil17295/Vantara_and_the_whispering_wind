@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="New Game"
+config/name="Vantara and the whispering wind"
 run/main_scene="uid://r5rb2trcptbv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
