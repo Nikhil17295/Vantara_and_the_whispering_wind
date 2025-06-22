@@ -16,7 +16,7 @@ const COYOTE_TIME = 0.1
 const JUMP_BUFFER_TIME = 0.1
 
 # Acceleration
-const ACCELERATION = 800.0
+const ACCELERATION = 1000.0
 const FRICTION = 2200.0
 const AIR_ACCELERATION = 1500.0
 const AIR_FRICTION = 1700.0
@@ -24,6 +24,10 @@ const AIR_FRICTION = 1700.0
 # Apex hang
 const APEX_HANG_VELOCITY = 30.0
 const APEX_GRAVITY_MULTIPLIER = 0.5
+
+#camera delays
+const VERTICAL_FOLLOW_DELAY := 0.1
+const LOOKAHEAD_DELAY := 0.3
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -40,22 +44,39 @@ func _ready():
 
 @onready var camera = $Camera2D
 var cam_offset := Vector2.ZERO
-var facing_direction := 1
 const LOOKAHEAD_ZONE := 60.0
 var vertical_target = -20.0
 var horizontal_target = 0.0
+var lookahead_delay_timer := 0.0
+var last_direction := 0
+var vertical_follow_timer := 0.0
+var last_vertical_pos := 0.0
+var camera_y_locked := true
+
+
 
 func _process(delta):
+	# Only change facing direction if input is consistent for some time
 	if direction != 0:
-		facing_direction = direction
-		
-	if grounded :
-		horizontal_target = LOOKAHEAD_ZONE * facing_direction
-	if not grounded:
-		cam_offset.x = horizontal_target
+		if direction == last_direction:
+			lookahead_delay_timer += delta
+		else:
+			lookahead_delay_timer = 0.0
+			last_direction = direction
+
+		if lookahead_delay_timer >= LOOKAHEAD_DELAY:
+			last_direction = direction
+	else:
+		# Reset delay if no direction pressed
+		lookahead_delay_timer = 0.0
+
+	# Now apply lookahead only after facing direction is updated
+	if grounded:
+		horizontal_target = LOOKAHEAD_ZONE * last_direction
 
 	# Vertical look target
 	if velocity.y >= MAX_FALL_SPEED:
+		camera_y_locked = false
 		vertical_target = 120.0
 	elif grounded and Input.is_action_pressed("look_up"):
 		vertical_target = -70.0
@@ -63,15 +84,15 @@ func _process(delta):
 		vertical_target = 100.0
 	else:
 		vertical_target = 20.0
-
-	cam_offset.y = move_toward(cam_offset.y, vertical_target, delta * 180.0)
+	if not camera_y_locked :
+		cam_offset.y = move_toward(cam_offset.y, vertical_target, delta * 180.0)
 	cam_offset.x = move_toward(cam_offset.x, horizontal_target , delta * 320.0)
 	camera.offset = cam_offset
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("move_left", "move_right")
 	if direction != 0:
-		facing_direction = direction
+		last_direction = direction
 	grounded = is_on_floor()
 
 	handle_horizontal_movement(delta, grounded)
@@ -79,6 +100,20 @@ func _physics_process(delta: float) -> void:
 	handle_animation(grounded)
 
 	move_and_slide()
+	
+	#for camera_y_locked
+	var vertical_movement = abs(global_position.y - last_vertical_pos)
+
+	if vertical_movement > 2.0:  # Player moved vertically
+		vertical_follow_timer = 0.0
+		camera_y_locked = true
+	else:
+		vertical_follow_timer += delta
+		if vertical_follow_timer >= VERTICAL_FOLLOW_DELAY:
+			camera_y_locked = false
+
+	last_vertical_pos = global_position.y
+
 
 func handle_horizontal_movement(delta: float, grounded: bool) -> void:
 	if grounded:
@@ -124,6 +159,7 @@ func handle_gravity_and_jump(delta: float, grounded: bool) -> void:
 	else:
 		if velocity.y > 0:
 			velocity.y = 0
+
 
 	# Jump execution
 	if jump_buffer > 0 and (grounded or coyote_time > 0):
