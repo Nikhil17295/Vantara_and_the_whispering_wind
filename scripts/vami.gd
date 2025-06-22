@@ -1,33 +1,33 @@
 extends CharacterBody2D
 
 # Movement speeds
-const SPEED = 280.0
+const SPEED = 250.0
 const MAX_FALL_SPEED = 900.0
-const AIR_BOOST_SPEED = 150.0
+const AIR_BOOST_SPEED = 180.0
 
 # Jump forces
-const JUMP_VELOCITY = -470.0
-const GRAVITY = 1100.0
+const JUMP_VELOCITY = -500.0
+const GRAVITY = 1000.0
 const FALL_GRAVITY_MULTIPLIER = 1.5
-const SHORT_JUMP_MULTIPLIER = 2.3
+const SHORT_JUMP_MULTIPLIER = 3
 
 # Timings
 const COYOTE_TIME = 0.07
 const JUMP_BUFFER_TIME = 0.1
 
 # Acceleration
-const ACCELERATION = 1000.0
+const ACCELERATION = 1500.0
 const FRICTION = 2200.0
-const AIR_ACCELERATION = 1500.0
-const AIR_FRICTION = 1700.0
+const AIR_ACCELERATION = 1400.0
+const AIR_FRICTION = 2000.0
 
 # Apex hang
 const APEX_HANG_VELOCITY = 30.0
 const APEX_GRAVITY_MULTIPLIER = 0.5
 
 #camera delays
-const VERTICAL_FOLLOW_DELAY := 0.1
-const LOOKAHEAD_DELAY := 0.3
+const VERTICAL_FOLLOW_DELAY := 0.15
+const LOOKAHEAD_DELAY := 0.5
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -44,7 +44,7 @@ func _ready():
 
 @onready var camera = $Camera2D
 var cam_offset := Vector2.ZERO
-const LOOKAHEAD_ZONE := 60.0
+const LOOKAHEAD_ZONE := 40.0
 var vertical_target = -20.0
 var horizontal_target = 0.0
 var lookahead_delay_timer := 0.0
@@ -58,7 +58,7 @@ var camera_y_locked := true
 func _process(delta):
 	# Only change facing direction if input is consistent for some time
 	if direction != 0:
-		if direction == last_direction:
+		if direction == last_direction and sign(velocity.x) == direction:
 			lookahead_delay_timer += delta
 		else:
 			lookahead_delay_timer = 0.0
@@ -79,21 +79,24 @@ func _process(delta):
 		camera_y_locked = false
 		vertical_target = 120.0
 	elif grounded and Input.is_action_pressed("look_up"):
-		vertical_target = -70.0
+		vertical_target = -60.0
 	elif grounded and Input.is_action_pressed("look_down"):
-		vertical_target = 100.0
+		vertical_target = 80.0
 	else:
 		vertical_target = 20.0
 	if not camera_y_locked :
-		cam_offset.y = move_toward(cam_offset.y, vertical_target, delta * 180.0)
-	cam_offset.x = move_toward(cam_offset.x, horizontal_target , delta * 320.0)
-	camera.offset = cam_offset
+		cam_offset.y = move_toward(cam_offset.y, vertical_target, delta * 140.0)
+	cam_offset.x = move_toward(cam_offset.x, horizontal_target , delta * 240.0)
+	if (camera.offset - cam_offset).length() > 2.0:
+		camera.offset = camera.offset.move_toward(cam_offset, delta * 150.0)
+
 
 func _physics_process(delta: float) -> void:
-	direction = Input.get_axis("move_left", "move_right")
-	if direction != 0:
-		last_direction = direction
 	grounded = is_on_floor()
+	direction = Input.get_axis("move_left", "move_right")
+	if grounded:
+		if direction != 0 and (sign(velocity.x) == direction or velocity.x == 0):
+			last_direction = direction
 
 	handle_horizontal_movement(delta, grounded)
 	handle_gravity_and_jump(delta, grounded)
@@ -117,13 +120,14 @@ func _physics_process(delta: float) -> void:
 
 func handle_horizontal_movement(delta: float, grounded: bool) -> void:
 	if grounded:
+		last_air_input_direction = direction
 		if direction != 0:
 			velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION * delta)
 		else:
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 	else:
 		if direction != 0 and direction != last_air_input_direction:
-			velocity.x += AIR_BOOST_SPEED * direction
+			velocity.x = AIR_BOOST_SPEED * direction
 			last_air_input_direction = direction
 
 		elif direction != 0:
@@ -178,5 +182,5 @@ func handle_animation(grounded: bool) -> void:
 	else:
 		animated_sprite.play("idle")
 
-	if direction != 0:
-		animated_sprite.flip_h = direction < 0
+	if last_direction!= 0:
+		animated_sprite.flip_h = last_direction < 0
