@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://8w6i4j803aph" path="res://scenes/Vami.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://dn6sfgx8wgwsw" path="res://assets/beast island/ChatGPT Image Jun 13, 2025, 03_51_40 PM (1).png" id="2_yqjtg"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("2_yqjtg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -186,7 +186,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_lbhrr"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_lnu2h")
+sources/0 = SubResource("TileSetAtlasSource_yqjtg")
 
 [node name="Game" type="Node2D"]
 

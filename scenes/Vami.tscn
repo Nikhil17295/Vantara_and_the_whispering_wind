@@ -94,7 +94,9 @@ position = Vector2(-5, 9)
 shape = SubResource("CapsuleShape2D_1171m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(-5, -46)
+enabled = false
 position_smoothing_speed = 8.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

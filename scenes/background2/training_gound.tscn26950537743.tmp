@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbcadbtuy773m"]
+
+[ext_resource type="PackedScene" uid="uid://dbs4o64ctxrlb" path="res://scenes/background2/parallax_background_clouds.tscn" id="2_183tb"]
+[ext_resource type="PackedScene" uid="uid://8w6i4j803aph" path="res://scenes/Vami.tscn" id="2_ty0m6"]
+[ext_resource type="PackedScene" uid="uid://botmj5yuwl0mw" path="res://scenes/background2/parallax_background.tscn" id="3_inhd4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gamqm"]
+
+[node name="TrainingGound" type="Node2D"]
+
+[node name="Vami" parent="." instance=ExtResource("2_ty0m6")]
+position = Vector2(70, 283)
+
+[node name="Camera2D2" type="Camera2D" parent="Vami"]
+limit_left = 2
+limit_right = 768
+limit_bottom = 340
+
+[node name="ParallaxBackgroundClouds" parent="." instance=ExtResource("2_183tb")]
+script = null
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_inhd4")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(81, 306)
+shape = SubResource("WorldBoundaryShape2D_gamqm")
