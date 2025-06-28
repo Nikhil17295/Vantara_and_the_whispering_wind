@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bga8avgiu4uw0" path="res://assets/background(training camp)/1.png" id="1_84bwa"]
 [ext_resource type="Script" uid="uid://ci131loly4m2t" path="res://scenes/background2/parallax_layer.gd" id="1_ab0hx"]
 [ext_resource type="Texture2D" uid="uid://cy0pyooun41xw" path="res://assets/background(training camp)/2.png" id="2_4k744"]
-[ext_resource type="Script" uid="uid://bfi6cck6cfrex" path="res://scenes/background2/parallax_layer_2.gd" id="3_crrww"]
+[ext_resource type="Script" uid="uid://bfi6cck6cfrex" path="res://parallax_layer_2.gd" id="3_crrww"]
 [ext_resource type="Texture2D" uid="uid://chjel5e2iqt3p" path="res://assets/background(training camp)/3.png" id="3_g3gny"]
 [ext_resource type="Texture2D" uid="uid://yjpegtn1rjkp" path="res://assets/background(training camp)/4.png" id="4_fctny"]
 [ext_resource type="Script" uid="uid://dses4w753pdm7" path="res://scenes/background2/parallax_layer_3.gd" id="5_v0e3f"]

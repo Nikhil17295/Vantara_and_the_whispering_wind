@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beb55n4ml1ji1"
-path="res://.godot/imported/back_ground-1[1].png-f7b42a084e3c0b72a04cd64a4a4d1dfd.ctex"
+uid="uid://dnpjcmh7yevql"
+path="res://.godot/imported/main gate of heaven.png-534ea187eba6bf07dd946b374a52b2f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background(training camp)/back_ground-1[1].png"
-dest_files=["res://.godot/imported/back_ground-1[1].png-f7b42a084e3c0b72a04cd64a4a4d1dfd.ctex"]
+source_file="res://assets/Training ground/assets/main gate of heaven.png"
+dest_files=["res://.godot/imported/main gate of heaven.png-534ea187eba6bf07dd946b374a52b2f9.ctex"]
 
 [params]
 

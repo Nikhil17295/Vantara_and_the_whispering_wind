@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn6sfgx8wgwsw"
-path="res://.godot/imported/ChatGPT Image Jun 13, 2025, 03_51_40 PM (1).png-4683e15ca176a910e4387b2e7046c4a5.ctex"
+uid="uid://mcnikycntrct"
+path="res://.godot/imported/target glowing state.png-94f40b4009523acf7bae385a12f8be7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/beast island/ChatGPT Image Jun 13, 2025, 03_51_40 PM (1).png"
-dest_files=["res://.godot/imported/ChatGPT Image Jun 13, 2025, 03_51_40 PM (1).png-4683e15ca176a910e4387b2e7046c4a5.ctex"]
+source_file="res://assets/Training ground/assets/target glowing state.png"
+dest_files=["res://.godot/imported/target glowing state.png-94f40b4009523acf7bae385a12f8be7d.ctex"]
 
 [params]
 

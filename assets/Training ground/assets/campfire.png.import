@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb1a1upevkktx"
-path="res://.godot/imported/layer 2.png-ceda14a08f0bc413bf5ed7950ff2fdca.ctex"
+uid="uid://cbd83qeqbyux3"
+path="res://.godot/imported/campfire.png-b056996c8b8dfe44a2cf0255cfb5c194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background(training camp)/layer 2.png"
-dest_files=["res://.godot/imported/layer 2.png-ceda14a08f0bc413bf5ed7950ff2fdca.ctex"]
+source_file="res://assets/Training ground/assets/campfire.png"
+dest_files=["res://.godot/imported/campfire.png-b056996c8b8dfe44a2cf0255cfb5c194.ctex"]
 
 [params]
 

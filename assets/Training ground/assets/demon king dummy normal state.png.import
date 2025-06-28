@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://64w4xuawqyq7"
-path="res://.godot/imported/back ground- 1-final.png-c364b52d5dc65639db93086f9ee65ff9.ctex"
+uid="uid://ee5tkoow8ffk"
+path="res://.godot/imported/demon king dummy normal state.png-4740103bc2dfb6d83f8585ea1399b90c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background(training camp)/back ground- 1-final.png"
-dest_files=["res://.godot/imported/back ground- 1-final.png-c364b52d5dc65639db93086f9ee65ff9.ctex"]
+source_file="res://assets/Training ground/assets/demon king dummy normal state.png"
+dest_files=["res://.godot/imported/demon king dummy normal state.png-4740103bc2dfb6d83f8585ea1399b90c.ctex"]
 
 [params]
 
