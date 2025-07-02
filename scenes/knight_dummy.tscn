@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi5au1k7ln6g3"]
+
+[ext_resource type="Texture2D" uid="uid://c7agmkjtwlur4" path="res://assets/Training ground/assets/knight dummy normal state.png" id="1_rspwg"]
+[ext_resource type="Texture2D" uid="uid://gw71inu8s6vm" path="res://assets/Training ground/assets/knight dummy broken state.png" id="2_lqqly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucomh"]
+atlas = ExtResource("1_rspwg")
+region = Rect2(0, 0, 70, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp82f"]
+atlas = ExtResource("2_lqqly")
+region = Rect2(0, 0, 66, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukox5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucomh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp82f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="KnightDummy" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ukox5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

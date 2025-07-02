@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5ypwlp78kkyv"]
+
+[ext_resource type="Texture2D" uid="uid://dnpjcmh7yevql" path="res://assets/Training ground/assets/main gate of heaven.png" id="1_13xu8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u5nq"]
+size = Vector2(174, 225)
+
+[node name="HeavenGate" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 10)
+shape = SubResource("RectangleShape2D_4u5nq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_13xu8")

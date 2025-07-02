@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfyvcw6thstr3"]
+
+[ext_resource type="Texture2D" uid="uid://cbd83qeqbyux3" path="res://assets/Training ground/assets/campfire.png" id="1_m47ar"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_54scn"]
+radius = 19.0
+
+[node name="Campfire" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.500002, 18)
+scale = Vector2(0.747126, 0.7)
+texture = ExtResource("1_m47ar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 30)
+shape = SubResource("CircleShape2D_54scn")
