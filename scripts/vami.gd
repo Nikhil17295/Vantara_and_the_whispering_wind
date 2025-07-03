@@ -30,6 +30,10 @@ const APEX_GRAVITY_MULTIPLIER = 0.5
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # State variables
+var fatigue_factor = 1.0
+var speed= SPEED * fatigue_factor
+var jump_speed= JUMP_VELOCITY * fatigue_factor
+var air_boost_speed = AIR_BOOST_SPEED * fatigue_factor
 var jump_buffer = 0.0
 var coyote_time: float = 0.0
 var direction: float = 0.0
@@ -43,6 +47,10 @@ func _ready():
 var last_direction := 0.0
 
 func _physics_process(delta: float) -> void:
+	fatigue_factor = GameManager.get_fatigue_penalty_factor()
+	speed= SPEED * fatigue_factor
+	jump_speed= JUMP_VELOCITY * fatigue_factor
+	air_boost_speed = AIR_BOOST_SPEED * fatigue_factor
 	grounded = is_on_floor()
 	direction = Input.get_axis("move_left", "move_right")
 	if grounded:
@@ -59,16 +67,16 @@ func handle_horizontal_movement(delta: float) -> void:
 	if grounded:
 		last_air_input_direction = direction
 		if direction != 0:
-			velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION * delta)
+			velocity.x = move_toward(velocity.x, direction * speed, ACCELERATION * delta)
 		else:
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 	else:
 		if direction != 0 and direction != last_air_input_direction:
-			velocity.x = AIR_BOOST_SPEED * direction
+			velocity.x = air_boost_speed * direction
 			last_air_input_direction = direction
 
 		elif direction != 0:
-			velocity.x = move_toward(velocity.x, direction * SPEED, AIR_ACCELERATION * delta)
+			velocity.x = move_toward(velocity.x, direction * speed, AIR_ACCELERATION * delta)
 		else:
 			velocity.x = move_toward(velocity.x, 0, AIR_FRICTION * delta)
 
@@ -104,7 +112,7 @@ func handle_gravity_and_jump(delta: float) -> void:
 
 	# Jump execution
 	if jump_buffer > 0 and (grounded or coyote_time > 0):
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_speed
 		jump_buffer = 0.0
 		coyote_time = 0.0
 

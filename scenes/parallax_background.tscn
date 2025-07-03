@@ -9,7 +9,7 @@
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 z_index = -10
-motion_scale = Vector2(0.29, 1)
+motion_scale = Vector2(0.45, 1)
 
 [node name="HeavenGate" parent="ParallaxLayer2" instance=ExtResource("1_yqcdc")]
 position = Vector2(337, 155)
