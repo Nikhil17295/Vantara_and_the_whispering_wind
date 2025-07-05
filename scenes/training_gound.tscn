@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://b682br51f0pc6"]
+
+[ext_resource type="PackedScene" uid="uid://8w6i4j803aph" path="res://scenes/Vami.tscn" id="1_th3rr"]
+[ext_resource type="Texture2D" uid="uid://b344vb3gh3732" path="res://assets/Training ground/final tileset .png" id="2_ju0tf"]
+[ext_resource type="PackedScene" uid="uid://k7bpwbxw04of" path="res://scenes/parallax_background_clouds.tscn" id="3_cmv34"]
+[ext_resource type="PackedScene" uid="uid://c3uwa600u1hoc" path="res://scenes/parallax_background.tscn" id="4_u17bs"]
+[ext_resource type="PackedScene" uid="uid://ocv8xpgul2oy" path="res://scenes/day_night.tscn" id="5_ju0tf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_th3rr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_th3rr"]
+texture = ExtResource("2_ju0tf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:6/0 = 0
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ju0tf"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_th3rr")
+
+[node name="TrainingGound" type="Node2D"]
+
+[node name="DayNight" parent="." instance=ExtResource("5_ju0tf")]
+light_mask = 2
+visibility_layer = 2
+
+[node name="Vami" parent="." instance=ExtResource("1_th3rr")]
+z_index = 10
+position = Vector2(34, 293)
+
+[node name="TileMap" type="TileMap" parent="."]
+material = SubResource("CanvasItemMaterial_th3rr")
+position = Vector2(0, 360)
+tile_set = SubResource("TileSet_ju0tf")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65535, 65536, 6, -65534, 65536, 6, -65533, 65536, 6, -65532, 65536, 6, -65531, 65536, 6, -65530, 65536, 6, -65529, 65536, 6, -65528, 65536, 6, -65527, 65536, 6, -65526, 65536, 6, -65525, 65536, 6, -65524, 65536, 6, -65523, 65536, 6, -65522, 65536, 6, -65521, 65536, 6, -65520, 65536, 6, -65519, 65536, 6, -65518, 65536, 6, -65517, 65536, 6, -65516, 65536, 6, -65515, 65536, 6, -65514, 65536, 6, -65513, 65536, 6, -65512, 65536, 6, -65511, 65536, 6, -65536, 0, 6, -65510, 131072, 6)
+
+[node name="ParallaxBackgroundClouds" parent="." instance=ExtResource("3_cmv34")]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_u17bs")]

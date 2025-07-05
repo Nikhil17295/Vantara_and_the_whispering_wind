@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://0thgiddu0xno"]
+
+[ext_resource type="PackedScene" uid="uid://b682br51f0pc6" path="res://scenes/training_gound.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dubcpc7jydy52" path="res://scripts/game_manager.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://bijfey27enkgf" path="res://scripts/main_menu.gd" id="2_sugp2"]
+
+[node name="Main" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_sugp2")
+
+[node name="FadeOverlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="TrainingGound" parent="." instance=ExtResource("1_0wfyh")]
+position = Vector2(-7, 0)
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+script = ExtResource("2_sugp2")
+
+[node name="Panel" type="Control" parent="MainMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 295.0
+offset_top = 178.0
+offset_right = 335.0
+offset_bottom = 218.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.980556, 1)
+
+[node name="Start" type="Button" parent="MainMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Exit" type="Button" parent="MainMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Exit"

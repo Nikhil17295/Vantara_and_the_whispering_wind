@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk45dkd20bqvp"]
+
+[ext_resource type="Texture2D" uid="uid://cpsfjb4bjql0y" path="res://assets/Training ground/assets/Tent.png" id="1_h6gn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iivji"]
+size = Vector2(158, 118)
+
+[node name="Tent" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h6gn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 13)
+shape = SubResource("RectangleShape2D_iivji")
