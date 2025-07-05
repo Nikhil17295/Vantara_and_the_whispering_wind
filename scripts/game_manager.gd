@@ -1,8 +1,9 @@
 extends Node
 
 # 📅 Time System
+const WAKE_TIME = 5.0
 var current_time: float = 0.0  # In-game hours (0–24)
-const TIME_SPEED: float = 0.04 # Controls how fast in-game time passes
+const TIME_SPEED: float = 0.25 # Controls how fast in-game time passes
 enum TimeZone { DAWN, DUSK, NIGHT }
 
 # 💤 Fatigue System
@@ -25,7 +26,7 @@ func start_game():
 	load_room(TRAINING_GROUND_ROOM_ID)
 	fatigue = 0.0
 	hours_since_sleep = 0.0
-	current_time = 0.0
+	current_time = WAKE_TIME
 
 func load_room(room_id: int):
 	current_room_id = room_id
@@ -33,9 +34,9 @@ func load_room(room_id: int):
 	print("Room loaded:", room_id)
 
 func get_current_time_zone() -> TimeZone:
-	if current_time < 8.0:
+	if current_time >= 4.0  and current_time <= 12.0:
 		return TimeZone.DAWN
-	elif current_time < 16.0:
+	elif current_time < 20.0:
 		return TimeZone.DUSK
 	else:
 		return TimeZone.NIGHT
@@ -63,18 +64,19 @@ func update_time_and_fatigue(delta: float):
 
 func get_fatigue_rate(hours: float) -> float:
 	if hours <= 12.0:
-		return 0.025  # 10% over 4 hrs
+		return 0.02  # 10% over 4 hrs
 	elif hours <= 16.0:
-		return 0.0375  # 15% over 4 hrs
+		return 0.035  # 15% over 4 hrs
 	elif hours <= 20.0:
-		return 0.0625  # 25% over 4 hrs
+		return 0.05  # 25% over 4 hrs
 	else:
-		return 0.10    # 10% per hour
+		return 0.075    # 10% per hour
 
 func sleep():
+	current_time = current_time + 8.0
 	fatigue = 0.0
 	hours_since_sleep = 0.0
 	print("Vami has rested.")
 
 func get_fatigue_penalty_factor() -> float:
-	return 1.0 - (fatigue * 0.20)
+	return 1.0 - (fatigue * 0.18)

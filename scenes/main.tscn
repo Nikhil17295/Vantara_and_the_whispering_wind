@@ -6,10 +6,6 @@
 
 [node name="Main" type="Node"]
 
-[node name="Sun" type="Node" parent="."]
-
-[node name="PointLight2D" type="PointLight2D" parent="Sun"]
-
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_sugp2")
 
