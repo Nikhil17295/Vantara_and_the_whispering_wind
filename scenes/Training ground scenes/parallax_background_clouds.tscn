@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://k7bpwbxw04of"]
 
-[ext_resource type="Script" uid="uid://ci131loly4m2t" path="res://scripts/parallax_layer.gd" id="1_14exc"]
+[ext_resource type="Script" uid="uid://ci131loly4m2t" path="res://scripts/training ground scripts/parallax_layer.gd" id="1_14exc"]
 [ext_resource type="Texture2D" uid="uid://bga8avgiu4uw0" path="res://assets/Training ground/background/1.png" id="2_ly1og"]
-[ext_resource type="Script" uid="uid://bfi6cck6cfrex" path="res://scripts/parallax_layer_2.gd" id="3_vvl0o"]
+[ext_resource type="Script" uid="uid://bfi6cck6cfrex" path="res://scripts/training ground scripts/parallax_layer_2.gd" id="3_vvl0o"]
 [ext_resource type="Texture2D" uid="uid://cy0pyooun41xw" path="res://assets/Training ground/background/2.png" id="4_beyp4"]
-[ext_resource type="Script" uid="uid://dses4w753pdm7" path="res://scripts/parallax_layer_3.gd" id="5_ly1og"]
+[ext_resource type="Script" uid="uid://dses4w753pdm7" path="res://scripts/training ground scripts/parallax_layer_3.gd" id="5_ly1og"]
 [ext_resource type="Texture2D" uid="uid://chjel5e2iqt3p" path="res://assets/Training ground/background/3.png" id="6_80w8l"]
-[ext_resource type="Script" path="res://scripts/parallax_layer_4.gd" id="7_o1kcr"]
+[ext_resource type="Script" uid="uid://dc7mijss66a4v" path="res://scripts/training ground scripts/parallax_layer_4.gd" id="7_o1kcr"]
 [ext_resource type="Texture2D" uid="uid://yjpegtn1rjkp" path="res://assets/Training ground/background/4.png" id="8_j5pyh"]
 [ext_resource type="PackedScene" uid="uid://ocv8xpgul2oy" path="res://scenes/day_night.tscn" id="9_ly1og"]
 

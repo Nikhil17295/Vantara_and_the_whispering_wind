@@ -7,7 +7,7 @@ func _ready():
 	update_color_immediate()
 func update_color_immediate():
 	var t := GameManager.current_time / 24.0
-	var color := gradient.gradient.sample(t)
+	color = gradient.gradient.sample(t)
 	self.color = color
 
 func _process(delta):
@@ -17,4 +17,4 @@ func _process(delta):
 	var t : float = clamp(GameManager.current_time / 24.0, 0.0, 1.0)
 
 	var target_color : Color = gradient.gradient.sample(t)
-	color = color.lerp(target_color, delta * blend_speed)
+	self.color = self.color.lerp(target_color, delta * blend_speed)

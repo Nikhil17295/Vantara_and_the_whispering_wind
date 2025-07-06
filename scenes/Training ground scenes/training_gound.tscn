@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://8w6i4j803aph" path="res://scenes/Vami.tscn" id="1_th3rr"]
 [ext_resource type="Texture2D" uid="uid://b344vb3gh3732" path="res://assets/Training ground/final tileset .png" id="2_ju0tf"]
-[ext_resource type="PackedScene" uid="uid://k7bpwbxw04of" path="res://scenes/parallax_background_clouds.tscn" id="3_cmv34"]
-[ext_resource type="PackedScene" uid="uid://c3uwa600u1hoc" path="res://scenes/parallax_background.tscn" id="4_u17bs"]
+[ext_resource type="PackedScene" uid="uid://k7bpwbxw04of" path="res://scenes/Training ground scenes/parallax_background_clouds.tscn" id="3_cmv34"]
+[ext_resource type="PackedScene" uid="uid://c3uwa600u1hoc" path="res://scenes/Training ground scenes/parallax_background.tscn" id="4_u17bs"]
 [ext_resource type="PackedScene" uid="uid://ocv8xpgul2oy" path="res://scenes/day_night.tscn" id="5_ju0tf"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_th3rr"]
@@ -88,7 +88,7 @@ visibility_layer = 2
 
 [node name="Vami" parent="." instance=ExtResource("1_th3rr")]
 z_index = 10
-position = Vector2(34, 293)
+position = Vector2(137, 293)
 
 [node name="TileMap" type="TileMap" parent="."]
 material = SubResource("CanvasItemMaterial_th3rr")
