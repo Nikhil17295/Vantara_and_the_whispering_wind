@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Vantara and the whispering wind"
-run/main_scene="uid://0thgiddu0xno"
+run/main_scene="uid://bu30k65a0l8s7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
