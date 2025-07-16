@@ -99,7 +99,6 @@ tile_set = SubResource("TileSet_ulpiy")
 [node name="Parallax2D" parent="." instance=ExtResource("1_0hsr6")]
 
 [node name="ForeGround" parent="." instance=ExtResource("2_ulpiy")]
-layer = 1
 
 [node name="Vami" parent="." instance=ExtResource("3_764ap")]
 position = Vector2(439, 293)
@@ -110,3 +109,4 @@ position = Vector2(439, 293)
 position = Vector2(-258, 278)
 
 [node name="DayNight" parent="." instance=ExtResource("6_yvkra")]
+visible = false
