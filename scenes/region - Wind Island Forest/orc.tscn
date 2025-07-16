@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyhy1x1gbkver"]
+[gd_scene load_steps=17 format=3 uid="uid://dyhy1x1gbkver"]
 
 [ext_resource type="Script" uid="uid://dux5y42xkeusb" path="res://scripts/Region - wind island forest/orc.gd" id="1_yi2fk"]
 [ext_resource type="Texture2D" uid="uid://c2vjt8b111306" path="res://assets/enemies/1a585772-8479-49be-af5b-0bfad6615ff6 (1).png" id="2_wgxqd"]
 [ext_resource type="Texture2D" uid="uid://r7fbc7amo3kc" path="res://assets/enemies/ChatGPT Image Jul 15, 2025, 12_01_26 AM-1.png.png" id="3_jhcvn"]
+[ext_resource type="Script" uid="uid://grxr5wcgiotq" path="res://scenes/region - Wind Island Forest/touch_hitbox.gd" id="4_wgxqd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oyjax"]
 atlas = ExtResource("2_wgxqd")
@@ -16,13 +17,13 @@ region = Rect2(163, 0, 163, 153)
 atlas = ExtResource("2_wgxqd")
 region = Rect2(0, 153, 163, 153)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t5e11"]
-atlas = ExtResource("2_wgxqd")
-region = Rect2(163, 153, 163, 153)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fgtn"]
 atlas = ExtResource("2_wgxqd")
 region = Rect2(0, 306, 163, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5e11"]
+atlas = ExtResource("2_wgxqd")
+region = Rect2(163, 153, 163, 153)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lsjy"]
 atlas = ExtResource("2_wgxqd")
@@ -45,10 +46,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_g10ba")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t5e11")
+"texture": SubResource("AtlasTexture_3fgtn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3fgtn")
+"texture": SubResource("AtlasTexture_t5e11")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2lsjy")
@@ -69,6 +70,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_e26gt"]
 radius = 53.0094
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jhcvn"]
+radius = 42.2882
+height = 120.598
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyjax"]
+radius = 21.8661
+height = 80.9196
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vd5bo"]
+
 [node name="Orc" type="CharacterBody2D"]
 z_index = 10
 collision_mask = 0
@@ -80,7 +91,58 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t03lj")
 animation = &"idle"
 autoplay = "idle"
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(15, 10)
 shape = SubResource("CircleShape2D_e26gt")
+metadata/_edit_lock_ = true
+
+[node name="TouchHitbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 32768
+collision_mask = 32768
+script = ExtResource("4_wgxqd")
+metadata/_edit_group_ = true
+
+[node name="1" type="CollisionShape2D" parent="TouchHitbox"]
+position = Vector2(22, 7)
+rotation = -0.0986478
+shape = SubResource("CapsuleShape2D_jhcvn")
+
+[node name="2" type="CollisionShape2D" parent="TouchHitbox"]
+position = Vector2(-31, 24)
+rotation = 1.91331
+shape = SubResource("CapsuleShape2D_oyjax")
+
+[node name="3" type="CollisionShape2D" parent="TouchHitbox"]
+position = Vector2(-10, -48)
+rotation = -0.0986478
+shape = SubResource("CapsuleShape2D_vd5bo")
+
+[node name="4" type="CollisionShape2D" parent="TouchHitbox"]
+position = Vector2(-37, 6)
+rotation = 2.24655
+shape = SubResource("CapsuleShape2D_oyjax")
+
+[node name="5" type="CollisionShape2D" parent="TouchHitbox"]
+position = Vector2(-18, -46)
+rotation = -0.0986478
+shape = SubResource("CapsuleShape2D_vd5bo")
+
+[node name="6" type="CollisionShape2D" parent="TouchHitbox"]
+position = Vector2(-47, -9)
+rotation = 2.36308
+shape = SubResource("CapsuleShape2D_oyjax")
+
+[node name="7" type="CollisionShape2D" parent="TouchHitbox"]
+position = Vector2(-43, -8)
+rotation = 2.55789
+shape = SubResource("CapsuleShape2D_oyjax")
+
+[node name="8" type="CollisionShape2D" parent="TouchHitbox"]
+position = Vector2(-45, -8)
+rotation = 2.44183
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_oyjax")
