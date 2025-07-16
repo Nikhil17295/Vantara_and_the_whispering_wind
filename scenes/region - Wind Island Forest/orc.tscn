@@ -144,5 +144,4 @@ shape = SubResource("CapsuleShape2D_oyjax")
 [node name="8" type="CollisionShape2D" parent="TouchHitbox"]
 position = Vector2(-45, -8)
 rotation = 2.44183
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_oyjax")
