@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvg0g3ngenahn"]
+[gd_scene load_steps=10 format=4 uid="uid://dvg0g3ngenahn"]
 
 [ext_resource type="PackedScene" uid="uid://d2hnqurex1v2p" path="res://scenes/region - Wind Island Forest/parallax_2d.tscn" id="1_0hsr6"]
 [ext_resource type="Script" uid="uid://bo6myi6s2k632" path="res://scripts/Region - wind island forest/room_manager101.gd" id="1_aav2l"]
 [ext_resource type="Texture2D" uid="uid://b344vb3gh3732" path="res://assets/Training ground/final tileset .png" id="2_aav2l"]
+[ext_resource type="PackedScene" uid="uid://cktky8ej0cwoa" path="res://scenes/region - Wind Island Forest/parallax_background.tscn" id="2_ulpiy"]
 [ext_resource type="PackedScene" uid="uid://bbwc850k571d6" path="res://scenes/Vami.tscn" id="3_764ap"]
 [ext_resource type="PackedScene" uid="uid://dyhy1x1gbkver" path="res://scenes/region - Wind Island Forest/orc.tscn" id="5_764ap"]
 [ext_resource type="PackedScene" uid="uid://ocv8xpgul2oy" path="res://scenes/day_night.tscn" id="6_yvkra"]
@@ -84,25 +85,27 @@ sources/0 = SubResource("TileSetAtlasSource_yvkra")
 
 [node name="RoomManager" type="Node2D" parent="."]
 script = ExtResource("1_aav2l")
-camera_limit_left = -3000
-camera_limit_right = 460
+camera_limit_left = -10000
+camera_limit_right = 10000
 camera_limit_top = -390
 camera_limit_bottom = 390
 
-[node name="Parallax2D" parent="." instance=ExtResource("1_0hsr6")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_ulpiy")]
 
 [node name="Vami" parent="." instance=ExtResource("3_764ap")]
-position = Vector2(436, 325)
+position = Vector2(439, 293)
 
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="Orc" parent="enemies" instance=ExtResource("5_764ap")]
-position = Vector2(-262, 297)
+position = Vector2(-258, 278)
 
 [node name="DayNight" parent="." instance=ExtResource("6_yvkra")]
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-3, 6)
+[node name="TileMap" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(576, -12)
+tile_map_data = PackedByteArray("AADy/wsAAAABAAYAAADz/wsAAAABAAYAAAD0/wsAAAABAAYAAAD1/wsAAAABAAYAAAD2/wsAAAABAAYAAAD3/wsAAAABAAYAAAD4/wsAAAABAAYAAAD5/wsAAAABAAYAAAD6/wsAAAABAAYAAAD7/wsAAAABAAYAAAD8/wsAAAABAAYAAAD9/wsAAAABAAYAAAD+/wsAAAABAAYAAAD//wsAAAABAAYAAAAAAAsAAAABAAYAAAABAAsAAAABAAYAAAACAAsAAAABAAYAAAADAAsAAAABAAYAAAAEAAsAAAABAAYAAAAFAAsAAAABAAYAAAAGAAsAAAABAAYAAAAHAAsAAAABAAYAAAAIAAsAAAABAAYAAAAJAAsAAAABAAYAAAAKAAsAAAABAAYAAAALAAsAAAABAAYAAAAMAAsAAAABAAYAAAANAAsAAAABAAYAAAAOAAsAAAABAAYAAAAPAAsAAAABAAYAAAAQAAsAAAABAAYAAAARAAsAAAABAAYAAAASAAsAAAABAAYAAAATAAsAAAABAAYAAAAUAAsAAAABAAYAAADq/wsAAAABAAYAAADr/wsAAAABAAYAAADs/wsAAAABAAYAAADt/wsAAAABAAYAAADu/wsAAAABAAYAAADv/wsAAAABAAYAAADw/wsAAAABAAYAAADx/wsAAAABAAYAAADp/wsAAAABAAYAAADo/wsAAAABAAYAAADn/wsAAAABAAYAAADi/wsAAAABAAYAAADj/wsAAAABAAYAAADk/wsAAAABAAYAAADl/wsAAAABAAYAAADm/wsAAAABAAYAAADh/wsAAAAAAAYAAADR/wsAAAABAAYAAADS/wsAAAABAAYAAADT/wsAAAABAAYAAADU/wsAAAABAAYAAADV/wsAAAABAAYAAADW/wsAAAABAAYAAADX/wsAAAABAAYAAADY/wsAAAABAAYAAADZ/wsAAAABAAYAAADa/wsAAAABAAYAAADb/wsAAAABAAYAAADc/wsAAAABAAYAAADd/wsAAAABAAYAAADe/wsAAAABAAYAAADf/wsAAAABAAYAAADg/wsAAAABAAYAAADQ/wsAAAAAAAYAAAA=")
 tile_set = SubResource("TileSet_ulpiy")
-format = 2
-layer_0/tile_data = PackedInt32Array(720909, 65536, 6, 720908, 65536, 6, 720907, 65536, 6, 720906, 65536, 6, 720905, 65536, 6, 720904, 65536, 6, 720903, 65536, 6, 720902, 65536, 6, 720901, 65536, 6, 720900, 65536, 6, 720899, 65536, 6, 720898, 65536, 6, 720897, 65536, 6, 720896, 65536, 6, 786431, 65536, 6, 786430, 65536, 6, 786429, 65536, 6, 786428, 65536, 6, 786427, 65536, 6, 786426, 65536, 6, 786425, 65536, 6, 786424, 65536, 6, 786423, 65536, 6, 786422, 65536, 6, 786421, 65536, 6, 786420, 65536, 6, 786419, 65536, 6, 786418, 65536, 6, 786417, 65536, 6, 786416, 65536, 6, 786415, 65536, 6, 720910, 131072, 6, 786414, 0, 6)
+
+[node name="Parallax2D" parent="." instance=ExtResource("1_0hsr6")]

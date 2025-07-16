@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b682br51f0pc6"]
+[gd_scene load_steps=12 format=4 uid="uid://b682br51f0pc6"]
 
 [ext_resource type="PackedScene" uid="uid://bbwc850k571d6" path="res://scenes/Vami.tscn" id="1_th3rr"]
 [ext_resource type="Texture2D" uid="uid://b344vb3gh3732" path="res://assets/Training ground/final tileset .png" id="2_ju0tf"]
@@ -107,9 +107,8 @@ position = Vector2(497, 270)
 [node name="KnightDummy" parent="." instance=ExtResource("8_weqq5")]
 position = Vector2(391, 292)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMapLayer" parent="."]
 material = SubResource("CanvasItemMaterial_th3rr")
 position = Vector2(0, 360)
+tile_map_data = PackedByteArray("AAABAP//AAABAAYAAAACAP//AAABAAYAAAADAP//AAABAAYAAAAEAP//AAABAAYAAAAFAP//AAABAAYAAAAGAP//AAABAAYAAAAHAP//AAABAAYAAAAIAP//AAABAAYAAAAJAP//AAABAAYAAAAKAP//AAABAAYAAAALAP//AAABAAYAAAAMAP//AAABAAYAAAANAP//AAABAAYAAAAOAP//AAABAAYAAAAPAP//AAABAAYAAAAQAP//AAABAAYAAAARAP//AAABAAYAAAASAP//AAABAAYAAAATAP//AAABAAYAAAAUAP//AAABAAYAAAAVAP//AAABAAYAAAAWAP//AAABAAYAAAAXAP//AAABAAYAAAAaAP//AAABAAYAAAAYAP//AAABAAYAAAAZAP//AAABAAYAAAAAAP//AAABAAYAAAAbAP//AAABAAYAAAAcAP//AAACAAYAAAD/////AAAAAAYAAAA=")
 tile_set = SubResource("TileSet_ju0tf")
-format = 2
-layer_0/tile_data = PackedInt32Array(-65535, 65536, 6, -65534, 65536, 6, -65533, 65536, 6, -65532, 65536, 6, -65531, 65536, 6, -65530, 65536, 6, -65529, 65536, 6, -65528, 65536, 6, -65527, 65536, 6, -65526, 65536, 6, -65525, 65536, 6, -65524, 65536, 6, -65523, 65536, 6, -65522, 65536, 6, -65521, 65536, 6, -65520, 65536, 6, -65519, 65536, 6, -65518, 65536, 6, -65517, 65536, 6, -65516, 65536, 6, -65515, 65536, 6, -65514, 65536, 6, -65513, 65536, 6, -65512, 65536, 6, -65511, 65536, 6, -65536, 0, 6, -65510, 131072, 6)

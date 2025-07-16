@@ -79,7 +79,6 @@ func set_camera_limits(left: int, right: int, top: int, bottom: int):
 
 [node name="Vami" type="CharacterBody2D"]
 z_index = 20
-position = Vector2(-1, -37)
 collision_layer = 2
 collision_mask = 2
 floor_snap_length = 0.0
