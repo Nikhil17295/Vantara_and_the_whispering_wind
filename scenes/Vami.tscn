@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8w6i4j803aph"]
+[gd_scene load_steps=12 format=3 uid="uid://bbwc850k571d6"]
 
 [ext_resource type="Script" uid="uid://dsddua1sfxie2" path="res://scripts/vami.gd" id="1_1171m"]
 [ext_resource type="Texture2D" uid="uid://1ts7toogu4r6" path="res://assets/Main_character/idle animation.png" id="1_m2xt3"]
@@ -60,23 +60,27 @@ height = 52.0
 [sub_resource type="GDScript" id="GDScript_1171m"]
 script/source = "extends Camera2D
 
-@onready var target := $\"..\"  # Adjust path if needed
+@onready var target := $\"..\"
 
 func _process(delta):
 	if not is_instance_valid(target):
 		return
 
 	var desired_pos = target.global_position
-
-	# Snap to pixel grid
 	var snapped_pos = desired_pos.snapped(Vector2(1, 1))
-
-	# Smooth follow (tweak 5.0 for slower/faster follow)
 	global_position = global_position.lerp(snapped_pos, delta * 5.0)
+
+func set_camera_limits(left: int, right: int, top: int, bottom: int):
+	limit_left = left
+	limit_right = right
+	limit_top = top
+	limit_bottom = bottom
 "
 
 [node name="Vami" type="CharacterBody2D"]
-position = Vector2(-1, -37)
+z_index = 20
+collision_layer = 2
+collision_mask = 2
 floor_snap_length = 0.0
 script = ExtResource("1_1171m")
 

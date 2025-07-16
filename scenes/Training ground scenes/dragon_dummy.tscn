@@ -1,19 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://qbvqea2stec0"]
 
 [ext_resource type="Script" uid="uid://p1r8282h5kt2" path="res://scripts/training ground scripts/dragon_dummy.gd" id="1_bo5mc"]
-[ext_resource type="Texture2D" uid="uid://dcgsyb2lyjvdx" path="res://assets/Training ground/assets/dragon dummy normal state.png" id="1_nj2yr"]
-[ext_resource type="Texture2D" uid="uid://cxof0oqmydfj0" path="res://assets/Training ground/assets/dragon dummy broken state.png" id="3_pf1jm"]
+[ext_resource type="Texture2D" uid="uid://u146y2onr0ek" path="res://assets/Training ground/assets/dragon_normal.png" id="2_bo5mc"]
+[ext_resource type="Texture2D" uid="uid://bfomvs016wpjd" path="res://assets/Training ground/assets/dragon_broken.png" id="3_pf1jm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbfg2"]
 size = Vector2(150, 164)
 
 [node name="DragonDummy" type="Area2D"]
 script = ExtResource("1_bo5mc")
-normal_texture = ExtResource("1_nj2yr")
+normal_texture = ExtResource("2_bo5mc")
 broken_texture = ExtResource("3_pf1jm")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, 2)
 shape = SubResource("RectangleShape2D_jbfg2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1

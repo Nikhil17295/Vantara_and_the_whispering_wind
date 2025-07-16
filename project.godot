@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Vantara and the whispering wind"
-run/main_scene="uid://0thgiddu0xno"
+run/main_scene="uid://bu30k65a0l8s7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,9 +24,13 @@ GameManager="*res://scripts/game_manager.gd"
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/mode=3
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/parallax_assistant/plugin.cfg")
 
 [input]
 

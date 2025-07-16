@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=4 uid="uid://dvg0g3ngenahn"]
+
+[ext_resource type="PackedScene" uid="uid://d2hnqurex1v2p" path="res://scenes/region - Wind Island Forest/parallax_2d.tscn" id="1_0hsr6"]
+[ext_resource type="Script" uid="uid://bo6myi6s2k632" path="res://scripts/Region - wind island forest/room_manager101.gd" id="1_aav2l"]
+[ext_resource type="Texture2D" uid="uid://b344vb3gh3732" path="res://assets/Training ground/final tileset .png" id="2_aav2l"]
+[ext_resource type="PackedScene" uid="uid://cktky8ej0cwoa" path="res://scenes/region - Wind Island Forest/parallax_background.tscn" id="2_ulpiy"]
+[ext_resource type="PackedScene" uid="uid://bbwc850k571d6" path="res://scenes/Vami.tscn" id="3_764ap"]
+[ext_resource type="PackedScene" uid="uid://dyhy1x1gbkver" path="res://scenes/region - Wind Island Forest/orc.tscn" id="5_764ap"]
+[ext_resource type="PackedScene" uid="uid://ocv8xpgul2oy" path="res://scenes/day_night.tscn" id="6_yvkra"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yvkra"]
+texture = ExtResource("2_aav2l")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:6/0 = 0
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ulpiy"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
+sources/0 = SubResource("TileSetAtlasSource_yvkra")
+
+[node name="Room102" type="Node2D"]
+
+[node name="RoomManager" type="Node2D" parent="."]
+script = ExtResource("1_aav2l")
+camera_limit_left = -10000
+camera_limit_right = 10000
+camera_limit_top = -390
+camera_limit_bottom = 390
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_ulpiy")]
+
+[node name="Vami" parent="." instance=ExtResource("3_764ap")]
+position = Vector2(439, 293)
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="Orc" parent="enemies" instance=ExtResource("5_764ap")]
+position = Vector2(-258, 278)
+
+[node name="DayNight" parent="." instance=ExtResource("6_yvkra")]
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(576, -12)
+tile_map_data = PackedByteArray("AADy/wsAAAABAAYAAADz/wsAAAABAAYAAAD0/wsAAAABAAYAAAD1/wsAAAABAAYAAAD2/wsAAAABAAYAAAD3/wsAAAABAAYAAAD4/wsAAAABAAYAAAD5/wsAAAABAAYAAAD6/wsAAAABAAYAAAD7/wsAAAABAAYAAAD8/wsAAAABAAYAAAD9/wsAAAABAAYAAAD+/wsAAAABAAYAAAD//wsAAAABAAYAAAAAAAsAAAABAAYAAAABAAsAAAABAAYAAAACAAsAAAABAAYAAAADAAsAAAABAAYAAAAEAAsAAAABAAYAAAAFAAsAAAABAAYAAAAGAAsAAAABAAYAAAAHAAsAAAABAAYAAAAIAAsAAAABAAYAAAAJAAsAAAABAAYAAAAKAAsAAAABAAYAAAALAAsAAAABAAYAAAAMAAsAAAABAAYAAAANAAsAAAABAAYAAAAOAAsAAAABAAYAAAAPAAsAAAABAAYAAAAQAAsAAAABAAYAAAARAAsAAAABAAYAAAASAAsAAAABAAYAAAATAAsAAAABAAYAAAAUAAsAAAABAAYAAADq/wsAAAABAAYAAADr/wsAAAABAAYAAADs/wsAAAABAAYAAADt/wsAAAABAAYAAADu/wsAAAABAAYAAADv/wsAAAABAAYAAADw/wsAAAABAAYAAADx/wsAAAABAAYAAADp/wsAAAABAAYAAADo/wsAAAABAAYAAADn/wsAAAABAAYAAADi/wsAAAABAAYAAADj/wsAAAABAAYAAADk/wsAAAABAAYAAADl/wsAAAABAAYAAADm/wsAAAABAAYAAADh/wsAAAAAAAYAAADR/wsAAAABAAYAAADS/wsAAAABAAYAAADT/wsAAAABAAYAAADU/wsAAAABAAYAAADV/wsAAAABAAYAAADW/wsAAAABAAYAAADX/wsAAAABAAYAAADY/wsAAAABAAYAAADZ/wsAAAABAAYAAADa/wsAAAABAAYAAADb/wsAAAABAAYAAADc/wsAAAABAAYAAADd/wsAAAABAAYAAADe/wsAAAABAAYAAADf/wsAAAABAAYAAADg/wsAAAABAAYAAADQ/wsAAAAAAAYAAAA=")
+tile_set = SubResource("TileSet_ulpiy")
+
+[node name="Parallax2D" parent="." instance=ExtResource("1_0hsr6")]

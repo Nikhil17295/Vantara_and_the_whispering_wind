@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b682br51f0pc6"]
+[gd_scene load_steps=12 format=4 uid="uid://b682br51f0pc6"]
 
-[ext_resource type="PackedScene" uid="uid://8w6i4j803aph" path="res://scenes/Vami.tscn" id="1_th3rr"]
+[ext_resource type="PackedScene" uid="uid://bbwc850k571d6" path="res://scenes/Vami.tscn" id="1_th3rr"]
 [ext_resource type="Texture2D" uid="uid://b344vb3gh3732" path="res://assets/Training ground/final tileset .png" id="2_ju0tf"]
 [ext_resource type="PackedScene" uid="uid://k7bpwbxw04of" path="res://scenes/Training ground scenes/parallax_background_clouds.tscn" id="3_cmv34"]
 [ext_resource type="PackedScene" uid="uid://c3uwa600u1hoc" path="res://scenes/Training ground scenes/parallax_background.tscn" id="4_u17bs"]
 [ext_resource type="PackedScene" uid="uid://ocv8xpgul2oy" path="res://scenes/day_night.tscn" id="5_ju0tf"]
+[ext_resource type="PackedScene" uid="uid://qbvqea2stec0" path="res://scenes/Training ground scenes/dragon_dummy.tscn" id="6_usp10"]
+[ext_resource type="PackedScene" uid="uid://bbvrhkwehnbxf" path="res://scenes/Training ground scenes/demon_lord_dummy.tscn" id="7_x236v"]
+[ext_resource type="PackedScene" uid="uid://bi5au1k7ln6g3" path="res://scenes/Training ground scenes/knight_dummy.tscn" id="8_weqq5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_th3rr"]
 
@@ -77,7 +80,8 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_ju0tf"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_th3rr")
 
 [node name="TrainingGound" type="Node2D"]
@@ -90,13 +94,21 @@ visibility_layer = 2
 z_index = 10
 position = Vector2(137, 293)
 
-[node name="TileMap" type="TileMap" parent="."]
-material = SubResource("CanvasItemMaterial_th3rr")
-position = Vector2(0, 360)
-tile_set = SubResource("TileSet_ju0tf")
-format = 2
-layer_0/tile_data = PackedInt32Array(-65535, 65536, 6, -65534, 65536, 6, -65533, 65536, 6, -65532, 65536, 6, -65531, 65536, 6, -65530, 65536, 6, -65529, 65536, 6, -65528, 65536, 6, -65527, 65536, 6, -65526, 65536, 6, -65525, 65536, 6, -65524, 65536, 6, -65523, 65536, 6, -65522, 65536, 6, -65521, 65536, 6, -65520, 65536, 6, -65519, 65536, 6, -65518, 65536, 6, -65517, 65536, 6, -65516, 65536, 6, -65515, 65536, 6, -65514, 65536, 6, -65513, 65536, 6, -65512, 65536, 6, -65511, 65536, 6, -65536, 0, 6, -65510, 131072, 6)
-
 [node name="ParallaxBackgroundClouds" parent="." instance=ExtResource("3_cmv34")]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_u17bs")]
+
+[node name="DragonDummy" parent="." instance=ExtResource("6_usp10")]
+position = Vector2(644, 257)
+
+[node name="DemonLordDummy" parent="." instance=ExtResource("7_x236v")]
+position = Vector2(497, 270)
+
+[node name="KnightDummy" parent="." instance=ExtResource("8_weqq5")]
+position = Vector2(391, 292)
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+material = SubResource("CanvasItemMaterial_th3rr")
+position = Vector2(0, 360)
+tile_map_data = PackedByteArray("AAABAP//AAABAAYAAAACAP//AAABAAYAAAADAP//AAABAAYAAAAEAP//AAABAAYAAAAFAP//AAABAAYAAAAGAP//AAABAAYAAAAHAP//AAABAAYAAAAIAP//AAABAAYAAAAJAP//AAABAAYAAAAKAP//AAABAAYAAAALAP//AAABAAYAAAAMAP//AAABAAYAAAANAP//AAABAAYAAAAOAP//AAABAAYAAAAPAP//AAABAAYAAAAQAP//AAABAAYAAAARAP//AAABAAYAAAASAP//AAABAAYAAAATAP//AAABAAYAAAAUAP//AAABAAYAAAAVAP//AAABAAYAAAAWAP//AAABAAYAAAAXAP//AAABAAYAAAAaAP//AAABAAYAAAAYAP//AAABAAYAAAAZAP//AAABAAYAAAAAAP//AAABAAYAAAAbAP//AAABAAYAAAAcAP//AAACAAYAAAD/////AAAAAAYAAAA=")
+tile_set = SubResource("TileSet_ju0tf")

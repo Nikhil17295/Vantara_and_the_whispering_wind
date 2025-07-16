@@ -11,9 +11,11 @@ size = Vector2(117, 116)
 script = ExtResource("1_parxq")
 normal_texture = ExtResource("1_tnw2q")
 broken_texture = ExtResource("3_k4lm4")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_gj0p6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
