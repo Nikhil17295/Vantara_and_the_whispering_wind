@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cktky8ej0cwoa"]
+[gd_scene load_steps=3 format=3 uid="uid://cktky8ej0cwoa"]
 
+[ext_resource type="Texture2D" uid="uid://dnj4fh48mo5lt" path="res://assets/region - wind island forest/Background layers/Layer_0001_8.png" id="1_omn2q"]
 [ext_resource type="Texture2D" uid="uid://ca5gemd0lhdl3" path="res://assets/region - wind island forest/Background layers/Layer_0000_9.png" id="2_ky4ib"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
-layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_mirroring = Vector2(928, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+z_index = 10
+texture = ExtResource("1_omn2q")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 z_index = 20
