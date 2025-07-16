@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2hnqurex1v2p"]
+[gd_scene load_steps=11 format=3 uid="uid://d2hnqurex1v2p"]
 
 [ext_resource type="Texture2D" uid="uid://cmfxqe5yis8bm" path="res://assets/region - wind island forest/Background layers/Layer_0011_0.png" id="2_80t3n"]
 [ext_resource type="Texture2D" uid="uid://cvvd48npor78p" path="res://assets/region - wind island forest/Background layers/Layer_0009_2.png" id="3_6kb53"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cbvn85pnm0rkl" path="res://assets/region - wind island forest/Background layers/Layer_0004_Lights.png" id="8_mwo34"]
 [ext_resource type="Texture2D" uid="uid://b05ia6i053lrv" path="res://assets/region - wind island forest/Background layers/Layer_0003_6.png" id="9_nine2"]
 [ext_resource type="Texture2D" uid="uid://pk3nynjkay6y" path="res://assets/region - wind island forest/Background layers/Layer_0002_7.png" id="10_80aqp"]
-[ext_resource type="Texture2D" uid="uid://dnj4fh48mo5lt" path="res://assets/region - wind island forest/Background layers/Layer_0001_8.png" id="10_uc83x"]
 [ext_resource type="PackedScene" uid="uid://ocv8xpgul2oy" path="res://scenes/day_night.tscn" id="12_gg2rr"]
 
 [node name="Parallax2D" type="ParallaxBackground"]
@@ -85,11 +84,5 @@ motion_mirroring = Vector2(928, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer10"]
 texture = ExtResource("10_80aqp")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
-texture = ExtResource("10_uc83x")
 
 [node name="DayNight" parent="." instance=ExtResource("12_gg2rr")]
