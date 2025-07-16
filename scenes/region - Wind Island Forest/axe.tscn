@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bvtwp6w0comky"]
+
+[node name="Axe" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="SharpEdge" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SharpEdge"]
+
+[node name="WoodenHandle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoodenHandle"]

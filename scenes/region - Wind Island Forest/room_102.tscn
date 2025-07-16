@@ -109,4 +109,3 @@ position = Vector2(439, 293)
 position = Vector2(-258, 278)
 
 [node name="DayNight" parent="." instance=ExtResource("6_yvkra")]
-visible = false

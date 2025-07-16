@@ -128,4 +128,4 @@ func handle_animation() -> void:
 		animated_sprite.play("idle")
 
 	if last_direction!= 0:
-		animated_sprite.flip_h = last_direction < 0
+		scale.x= -1 if last_direction < 0 else 1

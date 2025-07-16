@@ -105,4 +105,3 @@ position = Vector2(180, 0)
 texture = ExtResource("10_uc83x")
 
 [node name="DayNight" parent="." instance=ExtResource("12_gg2rr")]
-visible = false

@@ -1,0 +1,54 @@
+extends Area2D
+class_name VamiHurtbox
+
+@export var max_hp := 5
+var current_hp := max_hp
+var is_invulnerable := false
+
+func _ready():
+	# Set to only Layer 10, as planned
+	collision_layer = 1 << 9
+	collision_mask = 1 << 9
+
+func _on_area_entered(area: Area2D):
+	if is_invulnerable:
+		return
+
+	if area is EnemyHitbox:
+		take_damage(area.damage)
+
+		if area.trigger_invulnerability:
+			start_invulnerability()
+		if area.hitflash:
+			start_flash()
+		if area.screenshake:
+			trigger_screenshake()
+		if area.knockback:
+			trigger_knockback()
+
+func take_damage(amount: int):
+	current_hp -= amount
+	print("Vami took", amount, "damage. HP left:", current_hp)
+
+	if current_hp <= 0:
+		die()
+
+func start_invulnerability():
+	is_invulnerable = true
+	await get_tree().create_timer(1.0).timeout
+	is_invulnerable = false
+
+func start_flash():
+	# To be implemented with shader or modulate
+	pass
+
+func trigger_knockback():
+	pass
+
+func trigger_screenshake():
+	# To be linked with camera system later
+	pass
+
+func die():
+	print("Vami died.")
+	# Call your respawn/game over system

@@ -1,4 +1,4 @@
-extends Area2D
+extends EnemyHitbox
 
 @onready var sprite := $"../AnimatedSprite2D"
 
