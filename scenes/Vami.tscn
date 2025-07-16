@@ -1,52 +1,52 @@
 [gd_scene load_steps=12 format=3 uid="uid://bbwc850k571d6"]
 
 [ext_resource type="Script" uid="uid://dsddua1sfxie2" path="res://scripts/vami.gd" id="1_1171m"]
-[ext_resource type="Texture2D" uid="uid://dpg6gpyf83bmk" path="res://assets/Main_character/idle_animation.png" id="2_1171m"]
+[ext_resource type="Texture2D" uid="uid://1ts7toogu4r6" path="res://assets/Main_character/idle animation.png" id="1_m2xt3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_usrjq"]
-atlas = ExtResource("2_1171m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6rub"]
+atlas = ExtResource("1_m2xt3")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0nrye"]
-atlas = ExtResource("2_1171m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_520hs"]
+atlas = ExtResource("1_m2xt3")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bclwn"]
-atlas = ExtResource("2_1171m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aqo4"]
+atlas = ExtResource("1_m2xt3")
 region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tpoxi"]
-atlas = ExtResource("2_1171m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0gy4"]
+atlas = ExtResource("1_m2xt3")
 region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tai15"]
-atlas = ExtResource("2_1171m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_paqys"]
+atlas = ExtResource("1_m2xt3")
 region = Rect2(0, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ggu1s"]
-atlas = ExtResource("2_1171m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yebw"]
+atlas = ExtResource("1_m2xt3")
 region = Rect2(64, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1171m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_usrjq")
+"texture": SubResource("AtlasTexture_a6rub")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0nrye")
+"texture": SubResource("AtlasTexture_520hs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bclwn")
+"texture": SubResource("AtlasTexture_4aqo4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tpoxi")
+"texture": SubResource("AtlasTexture_a0gy4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tai15")
+"texture": SubResource("AtlasTexture_paqys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ggu1s")
+"texture": SubResource("AtlasTexture_7yebw")
 }],
 "loop": true,
 "name": &"idle",
@@ -91,7 +91,7 @@ position = Vector2(-5, 6)
 sprite_frames = SubResource("SpriteFrames_1171m")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.495282
+frame_progress = 0.878991
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 9)
