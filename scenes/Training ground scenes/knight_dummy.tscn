@@ -17,3 +17,4 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_jgopn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1

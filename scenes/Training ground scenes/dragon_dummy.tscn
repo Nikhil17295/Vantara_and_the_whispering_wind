@@ -18,3 +18,4 @@ position = Vector2(-6, 2)
 shape = SubResource("RectangleShape2D_jbfg2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1

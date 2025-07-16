@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://dyhy1x1gbkver"]
+
+[ext_resource type="Script" uid="uid://dux5y42xkeusb" path="res://scripts/Region - wind island forest/orc.gd" id="1_yi2fk"]
+[ext_resource type="Texture2D" uid="uid://c2vjt8b111306" path="res://assets/enemies/1a585772-8479-49be-af5b-0bfad6615ff6 (1).png" id="2_wgxqd"]
+[ext_resource type="Texture2D" uid="uid://r7fbc7amo3kc" path="res://assets/enemies/ChatGPT Image Jul 15, 2025, 12_01_26 AM-1.png.png" id="3_jhcvn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyjax"]
+atlas = ExtResource("2_wgxqd")
+region = Rect2(0, 0, 163, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd5bo"]
+atlas = ExtResource("2_wgxqd")
+region = Rect2(163, 0, 163, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g10ba"]
+atlas = ExtResource("2_wgxqd")
+region = Rect2(0, 153, 163, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5e11"]
+atlas = ExtResource("2_wgxqd")
+region = Rect2(163, 153, 163, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fgtn"]
+atlas = ExtResource("2_wgxqd")
+region = Rect2(0, 306, 163, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lsjy"]
+atlas = ExtResource("2_wgxqd")
+region = Rect2(163, 306, 163, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoem8"]
+atlas = ExtResource("3_jhcvn")
+region = Rect2(0, 0, 141, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t03lj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyjax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd5bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g10ba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5e11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fgtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lsjy")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoem8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e26gt"]
+radius = 53.0094
+
+[node name="Orc" type="CharacterBody2D"]
+z_index = 10
+collision_mask = 0
+script = ExtResource("1_yi2fk")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_t03lj")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 10)
+shape = SubResource("CircleShape2D_e26gt")
