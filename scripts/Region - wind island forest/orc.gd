@@ -28,28 +28,22 @@ func _physics_process(delta):
 
 
 	frame_counter += 1
-	if frame_counter == 10 or frame_counter == 20:
-		_face_vami()
-		if frame_counter == 20:
-			_check_vision()
-			frame_counter = 0
-			print(frame_counter)
+	if frame_counter == 20:
+		_check_vision()
+		frame_counter = 0
 
 	if can_see_vami:
+		_face_vami()
 		attack_timer -= delta
 		if attack_timer <= 0:
 			_throw_axe()
 			attack_timer = randf_range(attack_interval_min, attack_interval_max)
 
 func _face_vami():
-	if vami.global_position.x < global_position.x:
-		scale.x = 1
-	else:
-		scale.x = -1
+	if not vami:
+		return
 
-	raycasts_node.scale.x = scale.x  # Flip raycasts with body
-	print("Facing direction:", scale.x)
-
+	var vami_dir = sign(vami.global_position.x - global_position.x)
 
 func _check_vision():
 	can_see_vami = false

@@ -39,12 +39,13 @@ var coyote_time: float = 0.0
 var direction: float = 0.0
 var grounded: bool = false
 var last_air_input_direction = 0
+static var last_direction := 1.0
+
 
 func _ready():
 	animated_sprite.play("idle")
 	get_viewport().size = DisplayServer.screen_get_size()
 
-var last_direction := 0.0
 
 func _physics_process(delta: float) -> void:
 	fatigue_factor = GameManager.get_fatigue_penalty_factor()
@@ -117,15 +118,19 @@ func handle_gravity_and_jump(delta: float) -> void:
 		coyote_time = 0.0
 
 func handle_animation() -> void:
-	if not grounded:
-		if velocity.y < 0:
-			animated_sprite.play("idle")
-		else:
-			animated_sprite.play("idle")
-	elif abs(velocity.x) > 10:
-		animated_sprite.play("idle")
-	else:
-		animated_sprite.play("idle")
+	#if not grounded:
+		#if velocity.y < 0:
+			#animated_sprite.play("idle")
+		#else:
+			#animated_sprite.play("idle")
+	#elif abs(velocity.x) > 10:
+		#animated_sprite.play("idle")
+	#else:
+		#animated_sprite.play("idle")
+	animated_sprite.play("idle")
 
-	if last_direction!= 0:
-		scale.x= -1 if last_direction < 0 else 1
+	#if last_dire1ction!= 0:
+	if last_direction < 0 :
+		animated_sprite.flip_h = true
+	else:
+		animated_sprite.flip_h = false
