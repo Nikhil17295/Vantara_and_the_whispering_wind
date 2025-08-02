@@ -12,8 +12,3 @@ func _ready():
 func load_room(scene: PackedScene, spawn_pos: Vector2):
 	if current_room:
 		current_room.queue_free()
-
-	current_room = scene.instantiate()
-	game_root.add_child(current_room)
-
-	vami.global_position = spawn_pos

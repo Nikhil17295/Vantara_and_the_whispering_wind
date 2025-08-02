@@ -25,8 +25,8 @@ const AIR_FRICTION = 2000.0
 const APEX_HANG_VELOCITY = 30.0
 const APEX_GRAVITY_MULTIPLIER = 0.5
 
-
-
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var _1: CollisionShape2D = $"VamiHurtbox/1"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # State variables
@@ -130,7 +130,13 @@ func handle_animation() -> void:
 	animated_sprite.play("idle")
 
 	#if last_dire1ction!= 0:
+	
+
 	if last_direction < 0 :
 		animated_sprite.flip_h = true
+		collision_shape_2d.position.x = -3.0
+		_1.position.x = -3.0
 	else:
 		animated_sprite.flip_h = false
+		collision_shape_2d.position.x = 3.0
+		_1.position.x = 3.0

@@ -56,7 +56,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1171m"]
 radius = 12.0
-height = 52.0
+height = 58.0
 
 [sub_resource type="GDScript" id="GDScript_1171m"]
 script/source = "extends Camera2D
@@ -79,11 +79,12 @@ func set_camera_limits(left: int, right: int, top: int, bottom: int):
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1j0cm"]
-radius = 15.0
+radius = 16.0
 height = 58.0
 
 [node name="Vami" type="CharacterBody2D"]
 z_index = 20
+texture_filter = 1
 collision_layer = 2
 collision_mask = 2
 floor_snap_length = 0.0
@@ -92,7 +93,6 @@ script = ExtResource("1_1171m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(-5, 6)
 sprite_frames = SubResource("SpriteFrames_1171m")
 animation = &"idle"
 autoplay = "idle"
@@ -100,9 +100,10 @@ frame_progress = 0.878991
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-2, 9)
+light_mask = 7
+visibility_layer = 7
+position = Vector2(3, 0)
 shape = SubResource("CapsuleShape2D_1171m")
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-4, 0)
@@ -115,10 +116,13 @@ editor_draw_drag_margin = true
 script = SubResource("GDScript_1171m")
 
 [node name="VamiHurtbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("3_0nrye")
 
 [node name="1" type="CollisionShape2D" parent="VamiHurtbox"]
-position = Vector2(-1, 6)
+position = Vector2(3, 0)
 shape = SubResource("CapsuleShape2D_1j0cm")
 
 [connection signal="area_entered" from="VamiHurtbox" to="VamiHurtbox" method="_on_area_entered"]

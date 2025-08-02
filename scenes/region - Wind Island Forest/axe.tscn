@@ -11,14 +11,17 @@ size = Vector2(36.0843, 31.7621)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr8ir"]
 
 [node name="Axe" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_jjjcy")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("2_3oout")
 flip_h = true
 
 [node name="SharpEdge" type="Area2D" parent="."]
+visible = false
 script = ExtResource("3_bkxa5")
 damage = 2
 
@@ -28,6 +31,7 @@ rotation = -0.827377
 shape = SubResource("RectangleShape2D_bkxa5")
 
 [node name="WoodenHandle" type="Area2D" parent="."]
+visible = false
 script = ExtResource("4_yr8ir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WoodenHandle"]

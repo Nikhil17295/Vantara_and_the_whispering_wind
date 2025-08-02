@@ -1,10 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3uwa600u1hoc"]
+[gd_scene load_steps=8 format=3 uid="uid://c3uwa600u1hoc"]
 
 [ext_resource type="PackedScene" uid="uid://c5ypwlp78kkyv" path="res://scenes/Training ground scenes/heaven_gate.tscn" id="1_nqwn0"]
 [ext_resource type="Texture2D" uid="uid://beb55n4ml1ji1" path="res://assets/Training ground/background/back_ground-1[1].png" id="2_rqyrl"]
 [ext_resource type="PackedScene" uid="uid://bk45dkd20bqvp" path="res://scenes/Training ground scenes/tent.tscn" id="3_b3rd0"]
 [ext_resource type="PackedScene" uid="uid://cfyvcw6thstr3" path="res://scenes/Training ground scenes/campfire.tscn" id="4_ed2cu"]
 [ext_resource type="PackedScene" uid="uid://ocv8xpgul2oy" path="res://scenes/day_night.tscn" id="5_bpqef"]
+
+[sub_resource type="Gradient" id="Gradient_hijha"]
+offsets = PackedFloat32Array(0, 0.986239)
+colors = PackedColorArray(0.533333, 0.34902, 0.0705882, 1, 1, 1, 0.423529, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nqwn0"]
+gradient = SubResource("Gradient_hijha")
+width = 256
+height = 256
+use_hdr = true
+fill = 1
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -23,6 +36,20 @@ texture = ExtResource("2_rqyrl")
 position = Vector2(82, 255)
 
 [node name="Campfire" parent="ParallaxLayer2" instance=ExtResource("4_ed2cu")]
-position = Vector2(182, 242)
+position = Vector2(198, 249)
+
+[node name="PointLight2D" type="PointLight2D" parent="ParallaxLayer2"]
+show_behind_parent = true
+light_mask = 1023
+visibility_layer = 1023
+texture_filter = 1
+position = Vector2(201, 277)
+energy = 1.59
+blend_mode = 2
+range_layer_min = 5
+range_layer_max = -5
+range_item_cull_mask = 1023
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_nqwn0")
 
 [node name="DayNight" parent="." instance=ExtResource("5_bpqef")]

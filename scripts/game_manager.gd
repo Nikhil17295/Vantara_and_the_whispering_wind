@@ -81,7 +81,7 @@ func sleep():
 	hours_since_sleep = 0.0
 
 func get_fatigue_penalty_factor() -> float:
-	return 1.0 - (fatigue * 0.18)
+	return 1.0 - (fatigue * 0.15)
 
 
 func _on_start_pressed() -> void:

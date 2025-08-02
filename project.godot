@@ -30,7 +30,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/parallax_assistant/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

@@ -73,13 +73,15 @@ radius = 53.0094
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jhcvn"]
 radius = 42.2882
-height = 120.598
+height = 106.47
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyjax"]
-radius = 21.8661
-height = 80.9196
+radius = 14.8661
+height = 37.9391
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vd5bo"]
+radius = 7.06446
+height = 19.7058
 
 [node name="Orc" type="CharacterBody2D"]
 z_index = 10
@@ -108,115 +110,110 @@ script = ExtResource("4_wgxqd")
 metadata/_edit_group_ = true
 
 [node name="1" type="CollisionShape2D" parent="TouchHitbox"]
-position = Vector2(22, 7)
+position = Vector2(20, 10)
 rotation = -0.0986478
 shape = SubResource("CapsuleShape2D_jhcvn")
 
 [node name="2" type="CollisionShape2D" parent="TouchHitbox"]
-position = Vector2(-31, 24)
+position = Vector2(-41, 20)
 rotation = 1.91331
 shape = SubResource("CapsuleShape2D_oyjax")
 
-[node name="3" type="CollisionShape2D" parent="TouchHitbox"]
-position = Vector2(-10, -48)
-rotation = -0.0986478
-shape = SubResource("CapsuleShape2D_vd5bo")
-
 [node name="4" type="CollisionShape2D" parent="TouchHitbox"]
+visible = false
 position = Vector2(-37, 6)
 rotation = 2.24655
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="5" type="CollisionShape2D" parent="TouchHitbox"]
+visible = false
 position = Vector2(-18, -46)
 rotation = -0.0986478
 shape = SubResource("CapsuleShape2D_vd5bo")
 
 [node name="6" type="CollisionShape2D" parent="TouchHitbox"]
+visible = false
 position = Vector2(-47, -9)
 rotation = 2.36308
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="7" type="CollisionShape2D" parent="TouchHitbox"]
+visible = false
 position = Vector2(-43, -8)
 rotation = 2.55789
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="8" type="CollisionShape2D" parent="TouchHitbox"]
+visible = false
 position = Vector2(-45, -8)
 rotation = 2.44183
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="AxeSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-50, 0)
+gizmo_extents = 0.0
 
 [node name="Raycasts" type="Node2D" parent="."]
-position = Vector2(170, 30)
-rotation = -3.14159
+visible = false
+position = Vector2(0, 33)
 metadata/_edit_group_ = true
 
-[node name="RayCast2D9" type="RayCast2D" parent="Raycasts"]
-rotation = 0.314159
-target_position = Vector2(500, 1.42)
-
-[node name="RayCast2D13" type="RayCast2D" parent="Raycasts"]
-rotation = 0.0872665
-target_position = Vector2(550, 0)
-
-[node name="RayCast2D17" type="RayCast2D" parent="Raycasts"]
-target_position = Vector2(570, 0)
-
-[node name="RayCast2D14" type="RayCast2D" parent="Raycasts"]
-rotation = 0.15708
-target_position = Vector2(540, 0)
-
-[node name="RayCast2D15" type="RayCast2D" parent="Raycasts"]
-rotation = 0.20944
-target_position = Vector2(530, 0)
-
-[node name="RayCast2D16" type="RayCast2D" parent="Raycasts"]
-rotation = 0.261799
-target_position = Vector2(530, 0)
-
-[node name="RayCast2D10" type="RayCast2D" parent="Raycasts"]
-rotation = 0.383972
-target_position = Vector2(460, 0)
-
-[node name="RayCast2D11" type="RayCast2D" parent="Raycasts"]
-rotation = 0.453786
-target_position = Vector2(430, 0)
-
-[node name="RayCast2D12" type="RayCast2D" parent="Raycasts"]
-rotation = 0.523599
-target_position = Vector2(400, 0)
-
 [node name="RayCast2D" type="RayCast2D" parent="Raycasts"]
-rotation = 0.610865
-target_position = Vector2(380, 0)
+target_position = Vector2(-407, -8)
 
 [node name="RayCast2D2" type="RayCast2D" parent="Raycasts"]
-rotation = 0.698132
-target_position = Vector2(350, 0)
+target_position = Vector2(-379, -35)
 
 [node name="RayCast2D3" type="RayCast2D" parent="Raycasts"]
-rotation = 0.820305
-target_position = Vector2(310, 0)
+target_position = Vector2(-356, -65)
 
 [node name="RayCast2D4" type="RayCast2D" parent="Raycasts"]
-rotation = 0.959931
-target_position = Vector2(290, 0)
-
-[node name="RayCast2D7" type="RayCast2D" parent="Raycasts"]
-rotation = 1.09956
-target_position = Vector2(280, 0)
-
-[node name="RayCast2D6" type="RayCast2D" parent="Raycasts"]
-rotation = 1.22173
-target_position = Vector2(270, 0)
+target_position = Vector2(-335, -95)
 
 [node name="RayCast2D5" type="RayCast2D" parent="Raycasts"]
-rotation = 1.39626
-target_position = Vector2(260, 0)
+target_position = Vector2(-286, -133)
+
+[node name="RayCast2D6" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-230, -156)
+
+[node name="RayCast2D7" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-182, -174)
 
 [node name="RayCast2D8" type="RayCast2D" parent="Raycasts"]
-rotation = 1.5708
-target_position = Vector2(250, 0)
+target_position = Vector2(-137, -185)
+
+[node name="RayCast2D9" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-87, -201)
+
+[node name="RayCast2D10" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-36, -204)
+
+[node name="RayCast2D11" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-1, -202)
+
+[node name="RayCast2D12" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(49, -193)
+
+[node name="RayCast2D13" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(109, -174)
+
+[node name="RayCast2D14" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(140, -139)
+
+[node name="RayCast2D15" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(163, -109)
+
+[node name="RayCast2D16" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(172, -67)
+
+[node name="RayCast2D17" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(172, -34)
+
+[node name="RayCast2D18" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(174, -3)
+
+[node name="RayCast2D19" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(182, 16)
+
+[node name="RayCast2D20" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-397, 19)
