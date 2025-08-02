@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dyhy1x1gbkver"]
+[gd_scene load_steps=17 format=3 uid="uid://dyhy1x1gbkver"]
 
 [ext_resource type="Script" uid="uid://dux5y42xkeusb" path="res://scripts/Region - wind island forest/orc.gd" id="1_yi2fk"]
 [ext_resource type="PackedScene" uid="uid://bvtwp6w0comky" path="res://scenes/region - Wind Island Forest/axe.tscn" id="2_jhcvn"]
@@ -79,13 +79,8 @@ height = 106.47
 radius = 14.8661
 height = 37.9391
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vd5bo"]
-radius = 7.06446
-height = 19.7058
-
 [node name="Orc" type="CharacterBody2D"]
 z_index = 10
-collision_mask = 0
 script = ExtResource("1_yi2fk")
 axe_scene = ExtResource("2_jhcvn")
 metadata/_edit_group_ = true
@@ -99,6 +94,8 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
+light_mask = 2
+visibility_layer = 2
 position = Vector2(15, 10)
 shape = SubResource("CircleShape2D_e26gt")
 metadata/_edit_lock_ = true
@@ -120,31 +117,21 @@ rotation = 1.91331
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="4" type="CollisionShape2D" parent="TouchHitbox"]
-visible = false
 position = Vector2(-37, 6)
 rotation = 2.24655
 shape = SubResource("CapsuleShape2D_oyjax")
 
-[node name="5" type="CollisionShape2D" parent="TouchHitbox"]
-visible = false
-position = Vector2(-18, -46)
-rotation = -0.0986478
-shape = SubResource("CapsuleShape2D_vd5bo")
-
 [node name="6" type="CollisionShape2D" parent="TouchHitbox"]
-visible = false
 position = Vector2(-47, -9)
 rotation = 2.36308
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="7" type="CollisionShape2D" parent="TouchHitbox"]
-visible = false
 position = Vector2(-43, -8)
 rotation = 2.55789
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="8" type="CollisionShape2D" parent="TouchHitbox"]
-visible = false
 position = Vector2(-45, -8)
 rotation = 2.44183
 shape = SubResource("CapsuleShape2D_oyjax")
@@ -154,7 +141,6 @@ position = Vector2(-50, 0)
 gizmo_extents = 0.0
 
 [node name="Raycasts" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, 33)
 metadata/_edit_group_ = true
 

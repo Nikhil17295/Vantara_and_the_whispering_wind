@@ -1,14 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvtwp6w0comky"]
+[gd_scene load_steps=8 format=3 uid="uid://bvtwp6w0comky"]
 
 [ext_resource type="Script" uid="uid://cxw23hx6sjtyc" path="res://scripts/Region - wind island forest/axe.gd" id="1_jjjcy"]
 [ext_resource type="Texture2D" uid="uid://csf75x6jakmbk" path="res://assets/enemies/ChatGPT Image Jul 15, 2025, 12_24_19 PM-1-1.png.png" id="2_3oout"]
 [ext_resource type="Script" uid="uid://fka8yyvp4hrq" path="res://scenes/region - Wind Island Forest/sharp_edge.gd" id="3_bkxa5"]
 [ext_resource type="Script" uid="uid://dg43or1bhjmhy" path="res://scenes/region - Wind Island Forest/wooden_handle.gd" id="4_yr8ir"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkxa5"]
-size = Vector2(36.0843, 31.7621)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkxa5"]
+height = 20.3408
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u13r3"]
+radius = 5.8296
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr8ir"]
+radius = 4.99798
+height = 27.1776
 
 [node name="Axe" type="Node2D"]
 texture_filter = 1
@@ -26,15 +31,20 @@ script = ExtResource("3_bkxa5")
 damage = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SharpEdge"]
-position = Vector2(-4.47005, -11.9887)
-rotation = -0.827377
-shape = SubResource("RectangleShape2D_bkxa5")
+position = Vector2(-7, -3)
+rotation = -2.47837
+shape = SubResource("CapsuleShape2D_bkxa5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SharpEdge"]
+position = Vector2(0.999999, -18)
+rotation = -1.0088
+shape = SubResource("CapsuleShape2D_u13r3")
 
 [node name="WoodenHandle" type="Area2D" parent="."]
 visible = false
 script = ExtResource("4_yr8ir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WoodenHandle"]
-position = Vector2(9, 15)
-rotation = -0.857659
+position = Vector2(8, 16)
+rotation = -0.671952
 shape = SubResource("CapsuleShape2D_yr8ir")

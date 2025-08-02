@@ -103,7 +103,7 @@ visibility_layer = 2
 
 [node name="Vami" parent="." instance=ExtResource("1_th3rr")]
 z_index = 10
-position = Vector2(137, 293)
+position = Vector2(138, 299)
 
 [node name="ParallaxBackgroundClouds" parent="." instance=ExtResource("3_cmv34")]
 
