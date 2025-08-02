@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bu30k65a0l8s7"]
 
 [ext_resource type="Script" uid="uid://dubcpc7jydy52" path="res://scripts/game_manager.gd" id="1_sugp2"]
-[ext_resource type="PackedScene" uid="uid://dvg0g3ngenahn" path="res://scenes/region - Wind Island Forest/room_102.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b682br51f0pc6" path="res://scenes/Training ground scenes/training_gound.tscn" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://bijfey27enkgf" path="res://scripts/main_menu.gd" id="2_sugp2"]
 
 [node name="Main" type="Node"]
@@ -9,7 +9,7 @@
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_sugp2")
 
-[node name="Room102" parent="GameManager" instance=ExtResource("2_jyhfs")]
+[node name="TrainingGound" parent="GameManager" instance=ExtResource("2_jyhfs")]
 
 [node name="FadeOverlay" type="ColorRect" parent="."]
 anchors_preset = 15

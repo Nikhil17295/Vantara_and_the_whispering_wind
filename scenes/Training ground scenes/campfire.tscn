@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfyvcw6thstr3"]
+[gd_scene load_steps=5 format=3 uid="uid://cfyvcw6thstr3"]
 
 [ext_resource type="Texture2D" uid="uid://cbd83qeqbyux3" path="res://assets/Training ground/assets/campfire.png" id="1_m47ar"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54scn"]
 radius = 19.0
+
+[sub_resource type="Gradient" id="Gradient_hijha"]
+offsets = PackedFloat32Array(0, 0.986239)
+colors = PackedColorArray(0.533333, 0.34902, 0.0705882, 1, 1, 1, 0.423529, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bjr1e"]
+gradient = SubResource("Gradient_hijha")
+width = 256
+height = 256
+use_hdr = true
+fill = 1
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
 
 [node name="Campfire" type="Area2D"]
 
@@ -16,3 +29,15 @@ texture = ExtResource("1_m47ar")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 30)
 shape = SubResource("CircleShape2D_54scn")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 1023
+visibility_layer = 1023
+texture_filter = 1
+energy = 1.59
+blend_mode = 2
+range_layer_min = 5
+range_layer_max = -5
+range_item_cull_mask = 1023
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_bjr1e")

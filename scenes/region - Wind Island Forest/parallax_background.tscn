@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cktky8ej0cwoa"]
+[gd_scene load_steps=3 format=3 uid="uid://cktky8ej0cwoa"]
 
 [ext_resource type="Texture2D" uid="uid://ca5gemd0lhdl3" path="res://assets/region - wind island forest/Background layers/Layer_0000_9.png" id="2_ky4ib"]
+[ext_resource type="PackedScene" uid="uid://ocv8xpgul2oy" path="res://scenes/day_night.tscn" id="2_omn2q"]
 
 [node name="ForeGround" type="ParallaxBackground"]
 layer = 1
@@ -12,3 +13,5 @@ motion_mirroring = Vector2(928, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(180, 0)
 texture = ExtResource("2_ky4ib")
+
+[node name="DayNight" parent="." instance=ExtResource("2_omn2q")]

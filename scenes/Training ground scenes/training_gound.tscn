@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://b682br51f0pc6"]
+[gd_scene load_steps=16 format=4 uid="uid://b682br51f0pc6"]
 
 [ext_resource type="PackedScene" uid="uid://bbwc850k571d6" path="res://scenes/Vami.tscn" id="1_th3rr"]
+[ext_resource type="Script" uid="uid://bo6myi6s2k632" path="res://scripts/Region - wind island forest/room_manager101.gd" id="2_0fbdr"]
 [ext_resource type="Texture2D" uid="uid://b344vb3gh3732" path="res://assets/Training ground/final tileset .png" id="2_ju0tf"]
 [ext_resource type="PackedScene" uid="uid://k7bpwbxw04of" path="res://scenes/Training ground scenes/parallax_background_clouds.tscn" id="3_cmv34"]
 [ext_resource type="PackedScene" uid="uid://c3uwa600u1hoc" path="res://scenes/Training ground scenes/parallax_background.tscn" id="4_u17bs"]
@@ -8,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://qbvqea2stec0" path="res://scenes/Training ground scenes/dragon_dummy.tscn" id="6_usp10"]
 [ext_resource type="PackedScene" uid="uid://bbvrhkwehnbxf" path="res://scenes/Training ground scenes/demon_lord_dummy.tscn" id="7_x236v"]
 [ext_resource type="PackedScene" uid="uid://bi5au1k7ln6g3" path="res://scenes/Training ground scenes/knight_dummy.tscn" id="8_weqq5"]
+[ext_resource type="Script" uid="uid://dyrajp5vgmdg6" path="res://scenes/Training ground scenes/area_2d.gd" id="10_0fbdr"]
+[ext_resource type="Script" uid="uid://dyui1k7xcqpts" path="res://scenes/Training ground scenes/region.gd" id="11_7un74"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_th3rr"]
 
@@ -84,7 +87,15 @@ physics_layer_0/collision_layer = 7
 physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_th3rr")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjt43"]
+size = Vector2(71, 98.5)
+
 [node name="TrainingGound" type="Node2D"]
+
+[node name="RoomManager" type="Node2D" parent="."]
+script = ExtResource("2_0fbdr")
+camera_limit_right = 800
+camera_limit_bottom = 360
 
 [node name="DayNight" parent="." instance=ExtResource("5_ju0tf")]
 light_mask = 2
@@ -92,7 +103,7 @@ visibility_layer = 2
 
 [node name="Vami" parent="." instance=ExtResource("1_th3rr")]
 z_index = 10
-position = Vector2(137, 293)
+position = Vector2(138, 299)
 
 [node name="ParallaxBackgroundClouds" parent="." instance=ExtResource("3_cmv34")]
 
@@ -112,3 +123,19 @@ material = SubResource("CanvasItemMaterial_th3rr")
 position = Vector2(0, 360)
 tile_map_data = PackedByteArray("AAABAP//AAABAAYAAAACAP//AAABAAYAAAADAP//AAABAAYAAAAEAP//AAABAAYAAAAFAP//AAABAAYAAAAGAP//AAABAAYAAAAHAP//AAABAAYAAAAIAP//AAABAAYAAAAJAP//AAABAAYAAAAKAP//AAABAAYAAAALAP//AAABAAYAAAAMAP//AAABAAYAAAANAP//AAABAAYAAAAOAP//AAABAAYAAAAPAP//AAABAAYAAAAQAP//AAABAAYAAAARAP//AAABAAYAAAASAP//AAABAAYAAAATAP//AAABAAYAAAAUAP//AAABAAYAAAAVAP//AAABAAYAAAAWAP//AAABAAYAAAAXAP//AAABAAYAAAAaAP//AAABAAYAAAAYAP//AAABAAYAAAAZAP//AAABAAYAAAAAAP//AAABAAYAAAAbAP//AAABAAYAAAAcAP//AAACAAYAAAD/////AAAAAAYAAAA=")
 tile_set = SubResource("TileSet_ju0tf")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("10_0fbdr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(866.5, 277.25)
+shape = SubResource("RectangleShape2D_hjt43")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-41, 279)
+shape = SubResource("RectangleShape2D_hjt43")
+
+[node name="region" type="Node2D" parent="."]
+script = ExtResource("11_7un74")
+
+[connection signal="area_entered" from="Area2D" to="Vami" method="_on_area_2d_area_entered"]
