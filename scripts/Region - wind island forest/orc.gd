@@ -30,8 +30,8 @@ var can_see_vami := false
 var attack_timer := 0.0
 
 func _ready():
-	next_jump_time = randf_range(4.0, 5.0)
-	next_dash_time = randf_range(3.0, 4.0)
+	next_jump_time = randf_range(2.0, 3.0)
+	next_dash_time = randf_range(2.0, 4.0)
 
 
 	for ray in raycasts_node.get_children():
@@ -41,21 +41,21 @@ func _ready():
 
 func _physics_process(delta):
 	# ✅ Lazy-load Vami after she's added to the scene tree
-
 	if can_see_vami:
 		# Random jump
-		jump_timer += delta
-		if jump_timer >= next_jump_time and is_on_floor():
-			velocity.y = jump_force
+		if is_on_floor():
+			jump_timer += delta
+		if jump_timer >= next_jump_time:
+			velocity.y += jump_force
 			jump_timer = 0.0
-			next_jump_time = randf_range(4.0, 5.0)
+			next_jump_time = randf_range(1.0, 2.0)
 
 		# Random dash
 		dash_timer += delta
 		dash_cutoff_timer += delta
 		if dash_timer >= next_dash_time:
 			dash_timer = 0.0
-			next_dash_time = randf_range(3.0, 4.0)
+			next_dash_time = randf_range(2.0, 4.0)
 			dash_cutoff_timer = 0.0 
 			dir = sign(vami.global_position.x - global_position.x)
 
@@ -63,12 +63,14 @@ func _physics_process(delta):
 			velocity.x = dir * move_speed
 		else :
 			velocity.x = 0.0
+	if not can_see_vami:
+		velocity.x = 0.0
 
 	# Apply gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	else:
-		velocity.y = 0
+	if is_on_floor() and velocity.y > 0.0:
+		velocity.y = 0.0
 
 # Animation control
 	if not is_on_floor():

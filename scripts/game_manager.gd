@@ -3,7 +3,7 @@ extends Node
 # 📅 Time System
 const WAKE_TIME = 5.0
 var current_time: float = 0.0  # In-game hours (0–24)
-const TIME_SPEED: float = 0.25 # Controls how fast in-game time passes
+const TIME_SPEED: float = 0.1 # Controls how fast in-game time passes
 enum TimeZone { DAWN, DUSK, NIGHT }
 static var game_started  : bool = false
 
