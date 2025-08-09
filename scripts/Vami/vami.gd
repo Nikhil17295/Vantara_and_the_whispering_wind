@@ -26,8 +26,9 @@ const APEX_HANG_VELOCITY = 30.0
 const APEX_GRAVITY_MULTIPLIER = 0.5
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@onready var _1: CollisionShape2D = $"VamiHurtbox/1"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hurtbox_1: CollisionShape2D = $VamiHurtbox/hurtbox_1
+@onready var hitbox_1: CollisionShape2D = $VamiHitbox/hitbox_1
 
 # State variables
 var fatigue_factor = 1.0
@@ -135,8 +136,10 @@ func handle_animation() -> void:
 	if last_direction < 0 :
 		animated_sprite.flip_h = true
 		collision_shape_2d.position.x = -3.0
-		_1.position.x = -3.0
+		hurtbox_1.position.x = -3.0
+		hitbox_1.position.x = -43.5
 	else:
 		animated_sprite.flip_h = false
 		collision_shape_2d.position.x = 3.0
-		_1.position.x = 3.0
+		hurtbox_1.position.x = 3.0
+		hitbox_1.position.x = 43.5

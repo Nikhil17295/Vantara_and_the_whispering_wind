@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyhy1x1gbkver"]
+[gd_scene load_steps=19 format=3 uid="uid://dyhy1x1gbkver"]
 
 [ext_resource type="Script" uid="uid://dux5y42xkeusb" path="res://scripts/Region - wind island forest/orc.gd" id="1_yi2fk"]
 [ext_resource type="PackedScene" uid="uid://bvtwp6w0comky" path="res://scenes/region - Wind Island Forest/axe.tscn" id="2_jhcvn"]
 [ext_resource type="Texture2D" uid="uid://c2vjt8b111306" path="res://assets/enemies/1a585772-8479-49be-af5b-0bfad6615ff6 (1).png" id="2_wgxqd"]
 [ext_resource type="Texture2D" uid="uid://r7fbc7amo3kc" path="res://assets/enemies/ChatGPT Image Jul 15, 2025, 12_01_26 AM-1.png.png" id="3_jhcvn"]
 [ext_resource type="Script" uid="uid://grxr5wcgiotq" path="res://scenes/region - Wind Island Forest/touch_hitbox.gd" id="4_wgxqd"]
+[ext_resource type="Script" uid="uid://cnw73uyb60uli" path="res://scripts/Region - wind island forest/hurtbox.gd" id="6_oyjax"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oyjax"]
 atlas = ExtResource("2_wgxqd")
@@ -78,6 +79,10 @@ height = 106.47
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyjax"]
 radius = 14.8661
 height = 37.9391
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vd5bo"]
+radius = 57.0
+height = 148.0
 
 [node name="Orc" type="CharacterBody2D"]
 z_index = 10
@@ -208,3 +213,10 @@ target_position = Vector2(182, 16)
 
 [node name="RayCast2D20" type="RayCast2D" parent="Raycasts"]
 target_position = Vector2(-397, 19)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource("6_oyjax")
+
+[node name="1" type="CollisionShape2D" parent="Hurtbox"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vd5bo")
