@@ -88,8 +88,9 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t03lj")
-animation = &"idle"
+animation = &"Run"
 autoplay = "idle"
+frame_progress = 0.600655
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -117,21 +118,25 @@ rotation = 1.91331
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="4" type="CollisionShape2D" parent="TouchHitbox"]
+visible = false
 position = Vector2(-37, 6)
 rotation = 2.24655
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="6" type="CollisionShape2D" parent="TouchHitbox"]
+visible = false
 position = Vector2(-47, -9)
 rotation = 2.36308
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="7" type="CollisionShape2D" parent="TouchHitbox"]
+visible = false
 position = Vector2(-43, -8)
 rotation = 2.55789
 shape = SubResource("CapsuleShape2D_oyjax")
 
 [node name="8" type="CollisionShape2D" parent="TouchHitbox"]
+visible = false
 position = Vector2(-45, -8)
 rotation = 2.44183
 shape = SubResource("CapsuleShape2D_oyjax")

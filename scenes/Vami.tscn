@@ -96,7 +96,7 @@ texture_repeat = 2
 sprite_frames = SubResource("SpriteFrames_1171m")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.878991
+frame_progress = 0.37911
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

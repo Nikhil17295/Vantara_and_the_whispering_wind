@@ -1,7 +1,7 @@
 extends Area2D
 class_name VamiHurtbox
 
-@export var max_hp := 5
+@export var max_hp := 10
 var current_hp := max_hp
 var is_invulnerable := false
 
