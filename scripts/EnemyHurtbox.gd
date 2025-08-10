@@ -3,10 +3,11 @@ extends Area2D
 class_name EnemyHurtbox
 
 @export var max_health := 5
-var health := max_health
+var health 
 
 func _ready():
 	# Hurtboxes live on layer 9 (index 8)
+	health = max_health
 	collision_layer = 1 << 8
 	monitoring = true
 	connect("area_entered", Callable(self, "_on_area_entered"))

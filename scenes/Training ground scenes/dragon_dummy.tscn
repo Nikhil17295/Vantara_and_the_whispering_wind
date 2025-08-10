@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://qbvqea2stec0"]
+[gd_scene load_steps=7 format=3 uid="uid://qbvqea2stec0"]
 
 [ext_resource type="Script" uid="uid://p1r8282h5kt2" path="res://scripts/training ground scripts/dragon_dummy.gd" id="1_bo5mc"]
 [ext_resource type="Texture2D" uid="uid://u146y2onr0ek" path="res://assets/Training ground/assets/dragon_normal.png" id="2_bo5mc"]
 [ext_resource type="Texture2D" uid="uid://bfomvs016wpjd" path="res://assets/Training ground/assets/dragon_broken.png" id="3_pf1jm"]
+[ext_resource type="Script" uid="uid://cpqsjb4yn4smi" path="res://scripts/training ground scripts/DummyHurtbox.gd" id="4_pf1jm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbfg2"]
 size = Vector2(150, 164)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pf1jm"]
+radius = 54.0
+height = 156.0
 
 [node name="DragonDummy" type="Area2D"]
 script = ExtResource("1_bo5mc")
@@ -19,3 +24,12 @@ shape = SubResource("RectangleShape2D_jbfg2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(3, 1)
+script = ExtResource("4_pf1jm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_pf1jm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

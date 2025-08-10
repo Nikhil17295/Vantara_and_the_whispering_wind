@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://qbvqea2stec0" path="res://scenes/Training ground scenes/dragon_dummy.tscn" id="6_usp10"]
 [ext_resource type="PackedScene" uid="uid://bbvrhkwehnbxf" path="res://scenes/Training ground scenes/demon_lord_dummy.tscn" id="7_x236v"]
 [ext_resource type="PackedScene" uid="uid://bi5au1k7ln6g3" path="res://scenes/Training ground scenes/knight_dummy.tscn" id="8_weqq5"]
-[ext_resource type="Script" uid="uid://dyrajp5vgmdg6" path="res://scenes/Training ground scenes/area_2d.gd" id="10_0fbdr"]
-[ext_resource type="Script" uid="uid://dyui1k7xcqpts" path="res://scenes/Training ground scenes/region.gd" id="11_7un74"]
+[ext_resource type="Script" uid="uid://dyrajp5vgmdg6" path="res://scripts/training ground scripts/area_2d.gd" id="10_0fbdr"]
+[ext_resource type="Script" uid="uid://dyui1k7xcqpts" path="res://scripts/Region - wind island forest/region.gd" id="11_7un74"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_th3rr"]
 

@@ -103,11 +103,11 @@ tile_set = SubResource("TileSet_ulpiy")
 [node name="ForeGround" parent="." instance=ExtResource("2_ulpiy")]
 
 [node name="Vami" parent="." instance=ExtResource("3_764ap")]
-position = Vector2(440, 309)
+position = Vector2(150, 312)
 
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="Orc" parent="enemies" instance=ExtResource("5_764ap")]
-position = Vector2(136, 280)
+position = Vector2(702, 282)
 
 [node name="DayNight" parent="." instance=ExtResource("6_yvkra")]

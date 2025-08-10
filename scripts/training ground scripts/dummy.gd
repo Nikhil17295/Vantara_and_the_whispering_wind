@@ -29,11 +29,11 @@ func apply_level(level: DummyLevel) -> void:
 func take_damage(amount: int) -> void:
 	if is_broken:
 		return
-
-	current_health -= amount
-	flash_white()
-	shake_on_hit()
-	#play_particles(hit_particles)
+	else:
+		current_health -= amount
+		flash_white()
+		shake_on_hit()
+		#play_particles(hit_particles)
 
 	if current_health <= 0:
 		break_dummy()

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cxw23hx6sjtyc" path="res://scripts/Region - wind island forest/axe.gd" id="1_jjjcy"]
 [ext_resource type="Texture2D" uid="uid://csf75x6jakmbk" path="res://assets/enemies/ChatGPT Image Jul 15, 2025, 12_24_19 PM-1-1.png.png" id="2_3oout"]
-[ext_resource type="Script" uid="uid://fka8yyvp4hrq" path="res://scenes/region - Wind Island Forest/sharp_edge.gd" id="3_bkxa5"]
-[ext_resource type="Script" uid="uid://dg43or1bhjmhy" path="res://scenes/region - Wind Island Forest/wooden_handle.gd" id="4_yr8ir"]
+[ext_resource type="Script" uid="uid://fka8yyvp4hrq" path="res://scripts/Region - wind island forest/sharp_edge.gd" id="3_bkxa5"]
+[ext_resource type="Script" uid="uid://dg43or1bhjmhy" path="res://scripts/wooden_handle.gd" id="4_yr8ir"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkxa5"]
 height = 20.3408
